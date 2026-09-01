@@ -68,41 +68,40 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[540px] p-0 overflow-hidden border-slate-200">
-        <div className="bg-[#0D3155] p-6 text-white text-left">
-          <div className="flex items-center gap-2.5 text-sky-400 text-sm font-semibold mb-1">
-            <CalendarCheck className="w-5 h-5" weight="bold" />
+      <DialogContent className="sm:max-w-[520px] p-0 overflow-hidden border-slate-200 rounded-3xl">
+        <div className="bg-[#0B2545] p-6 text-white text-left">
+          <div className="flex items-center gap-2 text-sky-400 text-xs font-semibold mb-1">
+            <CalendarCheck className="w-4 h-4" weight="bold" />
             <span>Ramos Plumbing Services</span>
           </div>
-          <DialogTitle className="text-2xl font-bold text-white tracking-tight">
+          <DialogTitle className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             Schedule an Appointment
           </DialogTitle>
-          <DialogDescription className="text-sky-100/90 text-sm mt-1">
-            Select your service needs or consultation time. We will promptly
-            confirm your appointment.
+          <DialogDescription className="text-sky-100/80 text-xs sm:text-sm mt-1">
+            Select your service needs or consultation time. Carlos or Monica Ramos will confirm promptly.
           </DialogDescription>
         </div>
 
         <div className="p-6 pt-4 text-left">
           {submitted ? (
             <div className="py-6 text-center space-y-4">
-              <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-                <CheckCircle className="w-8 h-8" weight="fill" />
+              <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                <CheckCircle className="w-7 h-7" weight="fill" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-900">
+                <h3 className="text-lg font-bold text-slate-900">
                   Appointment Request Received
                 </h3>
-                <p className="text-sm text-slate-600 mt-2 max-w-md mx-auto">
+                <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-sm mx-auto">
                   Thank you, <span className="font-semibold">{formData.name}</span>.
-                  Carlos or Monica Ramos will review your request for{" "}
-                  <span className="font-semibold text-sky-700">{service}</span>{" "}
+                  We will review your request for{" "}
+                  <span className="font-semibold text-[#0284C7]">{service}</span>{" "}
                   and call you shortly at{" "}
                   <span className="font-semibold">{formData.phone}</span>.
                 </p>
               </div>
 
-              <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-left text-sm text-slate-700 space-y-1.5 max-w-md mx-auto">
+              <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 text-left text-xs sm:text-sm text-slate-700 space-y-1.5 max-w-sm mx-auto">
                 <div className="flex justify-between">
                   <span className="text-slate-500">Service:</span>
                   <span className="font-medium text-slate-900">{service}</span>
@@ -126,26 +125,26 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <div className="pt-2 flex flex-col sm:flex-row gap-2 justify-center">
                 <Button
                   onClick={handleReset}
-                  className="bg-[#0D3155] hover:bg-[#09223c] text-white"
+                  className="bg-[#0B2545] hover:bg-[#081b33] text-white rounded-full text-xs"
                 >
                   Done
                 </Button>
                 <a
                   href="tel:8324271674"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-md border border-slate-300 text-slate-700 hover:bg-slate-50"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-semibold rounded-full border border-slate-300 text-slate-700 hover:bg-slate-50"
                 >
-                  <Phone className="w-4 h-4 text-sky-600" weight="bold" />
-                  Call Carlos: (832) 427-1674
+                  <Phone className="w-3.5 h-3.5 text-[#0284C7]" weight="bold" />
+                  Call (832) 427-1674
                 </a>
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-3.5">
+              <div className="grid grid-cols-1 gap-3.5">
                 <div>
                   <Label
                     htmlFor="service-select"
-                    className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block"
+                    className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1 block"
                   >
                     Select Required Service
                   </Label>
@@ -153,7 +152,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     id="service-select"
                     value={service}
                     onChange={(e) => setService(e.target.value)}
-                    className="w-full h-10 px-3 py-2 text-sm rounded-md border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 font-medium"
+                    className="w-full h-10 px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
                     required
                   >
                     <option value="Plumbing Fixtures Sourcing & Installation">
@@ -188,13 +187,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     <div className="relative">
                       <Input
                         id="client-name"
-                        placeholder="Carlos Ramirez"
+                        placeholder="Full Name"
                         required
                         value={formData.name}
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
-                        className="pl-9 text-sm"
+                        className="pl-9 text-xs sm:text-sm rounded-lg"
                       />
                       <User
                         className="w-4 h-4 text-slate-400 absolute left-3 top-3"
@@ -220,7 +219,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
-                        className="pl-9 text-sm"
+                        className="pl-9 text-xs sm:text-sm rounded-lg"
                       />
                       <Phone
                         className="w-4 h-4 text-slate-400 absolute left-3 top-3"
@@ -236,7 +235,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       htmlFor="client-email"
                       className="text-xs font-semibold text-slate-700 block mb-1"
                     >
-                      Email Address (Optional)
+                      Email (Optional)
                     </Label>
                     <div className="relative">
                       <Input
@@ -247,7 +246,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
-                        className="pl-9 text-sm"
+                        className="pl-9 text-xs sm:text-sm rounded-lg"
                       />
                       <EnvelopeSimple
                         className="w-4 h-4 text-slate-400 absolute left-3 top-3"
@@ -273,7 +272,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                           preferredDate: e.target.value,
                         })
                       }
-                      className="text-sm"
+                      className="text-xs sm:text-sm rounded-lg"
                     />
                   </div>
                 </div>
@@ -294,7 +293,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         preferredTime: e.target.value,
                       })
                     }
-                    className="w-full h-10 px-3 py-2 text-sm rounded-md border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                    className="w-full h-10 px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
                   >
                     <option value="Morning (8AM - 12PM)">
                       Morning (8:00 AM – 12:00 PM)
@@ -316,27 +315,27 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     htmlFor="notes"
                     className="text-xs font-semibold text-slate-700 block mb-1"
                   >
-                    Project Details or Scope (Optional)
+                    Project Details (Optional)
                   </Label>
                   <Textarea
                     id="notes"
-                    placeholder="Briefly describe what you need (e.g. fixture counts, project timeline, permit questions)..."
+                    placeholder="Briefly describe what you need (e.g. fixture counts, permit questions)..."
                     rows={2}
                     value={formData.notes}
                     onChange={(e) =>
                       setFormData({ ...formData, notes: e.target.value })
                     }
-                    className="text-sm resize-none"
+                    className="text-xs sm:text-sm resize-none rounded-lg"
                   />
                 </div>
               </div>
 
-              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+              <div className="pt-2">
                 <Button
                   type="submit"
-                  className="w-full sm:flex-1 h-11 bg-[#0284C7] hover:bg-[#0369a1] text-white font-semibold text-sm shadow-sm"
+                  className="w-full h-11 bg-[#0B2545] hover:bg-[#081b33] text-white font-medium text-xs sm:text-sm rounded-full shadow-sm"
                 >
-                  <CalendarCheck className="w-4 h-4 mr-2" weight="bold" />
+                  <CalendarCheck className="w-4 h-4 mr-2 text-sky-400" weight="bold" />
                   Confirm Appointment Request
                 </Button>
               </div>
@@ -346,14 +345,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   Prefer direct phone scheduling? Call Carlos:{" "}
                   <a
                     href="tel:8324271674"
-                    className="font-bold text-[#0D3155] hover:underline"
+                    className="font-bold text-[#0B2545] hover:underline"
                   >
                     (832) 427-1674
                   </a>{" "}
                   or Monica:{" "}
                   <a
                     href="tel:8327459284"
-                    className="font-bold text-[#0D3155] hover:underline"
+                    className="font-bold text-[#0B2545] hover:underline"
                   >
                     (832) 745-9284
                   </a>

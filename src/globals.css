@@ -6,76 +6,70 @@
 
 @layer base {
   :root {
-    /* Plumbing & Project Services Brand Palette */
-    --background: 210 30% 99%;
-    --foreground: 215 35% 15%;
+    /* Sleek, Modern, Clean Plumbing Brand Palette */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 35% 15%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 35% 15%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Deep Navy Blue — High trust, industrial & engineering grade */
-    --primary: 210 75% 20%;
+    /* Deep Architectural Navy — Sleek, modern, dependable */
+    --primary: 213 72% 16%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 28% 95%;
-    --secondary-foreground: 210 75% 20%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 213 72% 16%;
 
-    --muted: 210 25% 94%;
-    --muted-foreground: 215 20% 45%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
 
-    /* Precision Sky Blue Accent — Flow, fixtures, clarity */
-    --accent: 199 89% 46%;
+    /* Precision Azure Sky Accent */
+    --accent: 199 89% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 24% 89%;
-    --input: 214 24% 89%;
-    --ring: 199 89% 46%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
-    --brand-navy: #0d3155;
-    --brand-navy-dark: #082038;
-    --brand-blue: #0284c7;
-    --brand-blue-light: #e0f2fe;
-    --brand-slate: #f1f5f9;
   }
 
   .dark {
-    --background: 215 35% 8%;
-    --foreground: 210 25% 96%;
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
 
-    --card: 215 32% 11%;
-    --card-foreground: 210 25% 96%;
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 215 32% 11%;
-    --popover-foreground: 210 25% 96%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
 
     --primary: 199 89% 48%;
-    --primary-foreground: 215 35% 8%;
+    --primary-foreground: 222 47% 7%;
 
-    --secondary: 215 25% 16%;
-    --secondary-foreground: 210 25% 96%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 215 25% 16%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
     --accent: 199 89% 48%;
-    --accent-foreground: 215 35% 8%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 25% 18%;
-    --input: 215 25% 18%;
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
     --ring: 199 89% 48%;
   }
 }
@@ -103,6 +97,6 @@
   h5,
   h6 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
 }

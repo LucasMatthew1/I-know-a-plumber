@@ -32,22 +32,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
   };
 
   return (
-    <footer className="bg-[#0D3155] text-white text-left pt-14 pb-20 sm:pb-12 border-t border-sky-950">
+    <footer className="bg-[#0B2545] text-white text-left pt-16 pb-20 sm:pb-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10">
           {/* Col 1: Brand & Bio */}
           <div className="lg:col-span-5 space-y-4">
             <Logo variant="light" size="lg" />
-            <p className="text-sky-100/80 text-sm leading-relaxed max-w-sm">
-              Dependable plumbing services, fixture sourcing, city permit
-              assistance, bid preparation, and contractor coordination.
+            <p className="text-sky-100/75 text-xs sm:text-sm leading-relaxed max-w-sm">
+              Dependable plumbing services, fixture sourcing, municipal permit
+              assistance, bid preparation, and project coordination.
             </p>
 
             <div className="pt-2 flex flex-col gap-2">
-              <span className="text-xs font-bold text-sky-400 uppercase tracking-wider">
+              <span className="text-xs font-semibold text-sky-400 uppercase tracking-wider">
                 Direct Contact Phone Lines:
               </span>
-              <div className="flex flex-col gap-1.5 text-sm font-semibold text-white">
+              <div className="flex flex-col gap-1.5 text-xs sm:text-sm font-medium text-white">
                 <a
                   href="tel:8324271674"
                   className="hover:text-sky-300 transition-colors inline-flex items-center gap-2"
@@ -68,10 +68,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
           {/* Col 2: Navigation Links */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold text-sky-400 uppercase tracking-wider">
-              Quick Navigation
+            <h4 className="text-xs font-semibold text-sky-400 uppercase tracking-wider">
+              Quick Links
             </h4>
-            <ul className="space-y-2 text-sm text-sky-100/90 font-medium">
+            <ul className="space-y-2 text-xs sm:text-sm text-sky-100/80 font-normal">
               <li>
                 <a
                   href="#home"
@@ -141,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Contact
+                  Contact Us
                 </a>
               </li>
             </ul>
@@ -149,26 +149,26 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
           {/* Col 3: Services & CTA */}
           <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-xs font-bold text-sky-400 uppercase tracking-wider">
+            <h4 className="text-xs font-semibold text-sky-400 uppercase tracking-wider">
               Appointments &amp; Support
             </h4>
-            <p className="text-xs text-sky-100/80 leading-relaxed">
+            <p className="text-xs text-sky-100/75 leading-relaxed">
               Ready to pull permits, source plumbing fixtures, or request a bid
-              for your upcoming project?
+              for your project?
             </p>
 
             <Button
               onClick={() => onOpenBooking()}
-              className="w-full bg-[#0369a1] hover:bg-[#075985] text-white font-bold text-sm h-11 rounded-lg flex items-center justify-center gap-2 shadow-sm"
+              className="w-full bg-white hover:bg-slate-100 text-[#0B2545] font-semibold text-xs sm:text-sm h-11 rounded-full flex items-center justify-center gap-2 shadow-sm"
             >
-              <CalendarCheck className="w-4 h-4" weight="bold" />
+              <CalendarCheck className="w-4 h-4 text-[#0284C7]" weight="bold" />
               <span>Book an Appointment</span>
             </Button>
           </div>
         </div>
 
         {/* Bottom Legal & Copyright Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sky-200/70">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sky-200/60">
           <p>
             &copy; {currentYear} Ramos Plumbing Services. All rights reserved.
           </p>
@@ -198,9 +198,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         open={legalModal !== null}
         onOpenChange={(open) => !open && setLegalModal(null)}
       >
-        <DialogContent className="sm:max-w-[500px] text-left p-6">
+        <DialogContent className="sm:max-w-[500px] text-left p-6 rounded-2xl">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold text-[#0D3155]">
+            <DialogTitle className="text-xl font-bold text-[#0B2545]">
               {legalModal === "privacy"
                 ? "Privacy Policy"
                 : "Terms of Service"}

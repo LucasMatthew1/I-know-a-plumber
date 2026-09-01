@@ -18,15 +18,13 @@ import {
 } from "@phosphor-icons/react";
 
 export const Reviews: React.FC = () => {
-  // Testimonial cards structured clearly so client's real customer reviews can easily be inserted or managed
   const [reviews, setReviews] = useState([
     {
       id: 1,
       name: "Residential Remodel Client",
       location: "Houston, TX",
-      projectType: "Bathroom Fixture Sourcing & Installation",
+      projectType: "Bathroom Fixtures & Sinks",
       rating: 5,
-      date: "Recent Project",
       comment:
         "Carlos and Monica were very communicative from start to finish. They helped us source all the plumbing fixtures for our two bathrooms and coordinated the installation smoothly. Straightforward pricing with no surprises.",
     },
@@ -34,9 +32,8 @@ export const Reviews: React.FC = () => {
       id: 2,
       name: "General Contractor Partner",
       location: "Harris County, TX",
-      projectType: "City Permit Assistance & Project Support",
+      projectType: "City Permit Assistance & Support",
       rating: 5,
-      date: "Recent Project",
       comment:
         "Working with Ramos Plumbing Services on our permit filings and bid preparation saved our team days of back-and-forth. Prompt, professional, and easy to reach by phone whenever we had a code question.",
     },
@@ -44,9 +41,8 @@ export const Reviews: React.FC = () => {
       id: 3,
       name: "Commercial Property Manager",
       location: "Houston Area",
-      projectType: "Plumbing Project Support & Fixture Schedules",
+      projectType: "Plumbing Fixture Schedules & Bids",
       rating: 5,
-      date: "Recent Project",
       comment:
         "Dependable support on our commercial renovation. Carlos provided accurate fixture takeoffs and bid breakdowns on schedule. We appreciate their honest communication and attention to detail.",
     },
@@ -72,7 +68,6 @@ export const Reviews: React.FC = () => {
       location: newReview.location || "Houston Area",
       projectType: newReview.projectType || "Plumbing Service",
       rating: newReview.rating,
-      date: "Just now",
       comment: newReview.comment,
     };
 
@@ -95,70 +90,70 @@ export const Reviews: React.FC = () => {
   return (
     <section
       id="reviews"
-      className="py-16 sm:py-24 bg-white border-b border-slate-200 text-left"
+      className="py-18 sm:py-24 bg-white border-b border-slate-100 text-left"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sky-50 border border-sky-200 text-sky-800 text-xs font-bold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-200/80 text-slate-700 text-xs font-medium mb-3">
               <Star className="w-4 h-4 text-amber-500" weight="fill" />
-              <span>Customer Feedback &amp; Reviews</span>
+              <span>Customer Reviews</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#0D3155] tracking-tight">
-              What Our Clients Say
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0B2545] tracking-tight">
+              Client Feedback
             </h2>
-            <p className="text-slate-600 text-base sm:text-lg mt-3 leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
               Authentic feedback from homeowners, contractors, and project
-              managers who have worked directly with Ramos Plumbing Services.
+              managers who have worked with Ramos Plumbing Services.
             </p>
           </div>
 
           <Button
             onClick={() => setReviewModalOpen(true)}
             variant="outline"
-            className="border-slate-300 text-[#0D3155] hover:bg-slate-50 font-semibold text-sm shrink-0 self-start md:self-auto"
+            className="border-slate-200 text-[#0B2545] hover:bg-slate-50 font-medium text-xs sm:text-sm rounded-full shrink-0 self-start md:self-auto h-10 px-4"
           >
-            <PlusCircle className="w-4 h-4 mr-2 text-[#0369a1]" weight="bold" />
+            <PlusCircle className="w-4 h-4 mr-2 text-[#0284C7]" weight="bold" />
             Leave a Review
           </Button>
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7">
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-slate-50 rounded-xl p-6 sm:p-7 border border-slate-200 flex flex-col justify-between hover:border-sky-200 transition-colors"
+              className="bg-slate-50/70 rounded-2xl p-6 sm:p-7 border border-slate-200/70 flex flex-col justify-between hover:border-slate-300 transition-colors"
             >
               <div>
                 {/* Rating Stars & Quote Icon */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-1 text-amber-500">
                     {Array.from({ length: review.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4" weight="fill" />
+                      <Star key={i} className="w-3.5 h-3.5" weight="fill" />
                     ))}
                   </div>
                   <Quotes
-                    className="w-8 h-8 text-slate-300"
+                    className="w-7 h-7 text-slate-300"
                     weight="duotone"
                   />
                 </div>
 
                 {/* Comment */}
-                <p className="text-slate-700 text-sm leading-relaxed mb-6 italic">
+                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed mb-6 italic">
                   &ldquo;{review.comment}&rdquo;
                 </p>
               </div>
 
               {/* Client Info */}
-              <div className="pt-4 border-t border-slate-200/80">
+              <div className="pt-4 border-t border-slate-200/60">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#0D3155] text-white flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#0B2545] text-white flex items-center justify-center font-bold text-xs">
                     {review.name.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">
+                    <h4 className="text-xs sm:text-sm font-bold text-slate-900">
                       {review.name}
                     </h4>
                     <p className="text-xs text-slate-500">
@@ -171,24 +166,23 @@ export const Reviews: React.FC = () => {
           ))}
         </div>
 
-        {/* Note about real review updates */}
         <div className="mt-8 text-center">
           <p className="text-xs text-slate-500">
-            Client reviews are updated regularly. Have you completed a project with Carlos or Monica Ramos? We welcome your honest feedback.
+            Have you worked with Carlos or Monica Ramos? We welcome your honest feedback.
           </p>
         </div>
       </div>
 
       {/* Leave a Review Modal Dialog */}
       <Dialog open={reviewModalOpen} onOpenChange={setReviewModalOpen}>
-        <DialogContent className="sm:max-w-[480px] p-6 text-left">
+        <DialogContent className="sm:max-w-[480px] p-6 text-left rounded-2xl">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold text-[#0D3155]">
+            <DialogTitle className="text-xl font-bold text-[#0B2545]">
               Share Your Experience
             </DialogTitle>
-            <DialogDescription className="text-sm text-slate-600">
+            <DialogDescription className="text-xs sm:text-sm text-slate-600">
               Let Carlos and Monica Ramos know how your plumbing service or
-              project support went.
+              project went.
             </DialogDescription>
           </DialogHeader>
 
@@ -197,16 +191,15 @@ export const Reviews: React.FC = () => {
               <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                 <CheckCircle className="w-6 h-6" weight="fill" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900">
-                Review Added Successfully!
+              <h3 className="text-base font-bold text-slate-900">
+                Review Submitted
               </h3>
               <p className="text-xs text-slate-600 max-w-xs mx-auto">
-                Thank you for supporting Ramos Plumbing Services. Your feedback
-                has been recorded.
+                Thank you for supporting Ramos Plumbing Services.
               </p>
               <Button
                 onClick={handleCloseReviewModal}
-                className="bg-[#0D3155] hover:bg-[#071c32] text-white text-xs mt-2"
+                className="bg-[#0B2545] hover:bg-[#081b33] text-white text-xs rounded-full mt-2"
               >
                 Close
               </Button>
@@ -222,13 +215,13 @@ export const Reviews: React.FC = () => {
                 </Label>
                 <Input
                   id="rev-name"
-                  placeholder="e.g. John Miller or Miller Construction"
+                  placeholder="e.g. John Miller"
                   required
                   value={newReview.name}
                   onChange={(e) =>
                     setNewReview({ ...newReview, name: e.target.value })
                   }
-                  className="text-sm"
+                  className="text-sm rounded-lg"
                 />
               </div>
 
@@ -242,12 +235,12 @@ export const Reviews: React.FC = () => {
                   </Label>
                   <Input
                     id="rev-loc"
-                    placeholder="Houston, Katy, etc."
+                    placeholder="Houston, TX"
                     value={newReview.location}
                     onChange={(e) =>
                       setNewReview({ ...newReview, location: e.target.value })
                     }
-                    className="text-sm"
+                    className="text-sm rounded-lg"
                   />
                 </div>
 
@@ -260,7 +253,7 @@ export const Reviews: React.FC = () => {
                   </Label>
                   <Input
                     id="rev-service"
-                    placeholder="Fixtures / Permits / Bid"
+                    placeholder="Fixtures / Permits"
                     value={newReview.projectType}
                     onChange={(e) =>
                       setNewReview({
@@ -268,7 +261,7 @@ export const Reviews: React.FC = () => {
                         projectType: e.target.value,
                       })
                     }
-                    className="text-sm"
+                    className="text-sm rounded-lg"
                   />
                 </div>
               </div>
@@ -282,14 +275,14 @@ export const Reviews: React.FC = () => {
                 </Label>
                 <Textarea
                   id="rev-comment"
-                  placeholder="Describe your experience working with Ramos Plumbing Services..."
+                  placeholder="Describe your experience with Ramos Plumbing Services..."
                   rows={4}
                   required
                   value={newReview.comment}
                   onChange={(e) =>
                     setNewReview({ ...newReview, comment: e.target.value })
                   }
-                  className="text-sm resize-none"
+                  className="text-sm resize-none rounded-lg"
                 />
               </div>
 
@@ -298,13 +291,13 @@ export const Reviews: React.FC = () => {
                   type="button"
                   variant="outline"
                   onClick={handleCloseReviewModal}
-                  className="text-xs"
+                  className="text-xs rounded-full"
                 >
                   Cancel
                 </Button>
                 <Button
                   type="submit"
-                  className="bg-[#0369a1] hover:bg-[#075985] text-white text-xs font-semibold"
+                  className="bg-[#0B2545] hover:bg-[#081b33] text-white text-xs font-medium rounded-full px-5"
                 >
                   Submit Review
                 </Button>

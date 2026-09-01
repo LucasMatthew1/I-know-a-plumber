@@ -35,36 +35,36 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   return (
     <section
       id="contact"
-      className="py-16 sm:py-24 bg-white border-b border-slate-200 text-left"
+      className="py-18 sm:py-24 bg-white border-b border-slate-100 text-left"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column: Direct Phone Numbers & Information */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sky-50 border border-sky-200 text-sky-800 text-xs font-bold uppercase tracking-wider">
-              <Phone className="w-4 h-4 text-[#0369a1]" weight="bold" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-50 border border-slate-200/80 text-slate-700 text-xs font-medium">
+              <Phone className="w-4 h-4 text-[#0284C7]" weight="bold" />
               <span>Contact Us</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#0D3155] tracking-tight">
-              Get in Touch Directly
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0B2545] tracking-tight">
+              Direct Contact
             </h2>
 
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               We are ready to assist with your plumbing fixtures, permit pulling,
               project estimates, and service inquiries. Reach out to Carlos or
-              Monica Ramos directly by phone or submit the quick contact form.
+              Monica Ramos directly by phone or submit the contact form.
             </p>
 
-            {/* Prominent Direct Phone Cards */}
+            {/* Direct Phone Cards */}
             <div className="space-y-3 pt-2">
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-sky-300 transition-colors">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">
+              <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 transition-colors">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
                   Primary Contact / Project Inquiries
                 </span>
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">
+                    <h4 className="text-sm sm:text-base font-bold text-slate-900">
                       Carlos Ramos
                     </h4>
                     <p className="text-xs text-slate-500">
@@ -73,21 +73,21 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                   <a
                     href="tel:8324271674"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#0D3155] text-white hover:bg-sky-700 font-bold text-xs transition-colors shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#0B2545] text-white hover:bg-[#081b33] font-medium text-xs transition-colors shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5 text-sky-300" weight="fill" />
+                    <Phone className="w-3.5 h-3.5 text-sky-400" weight="fill" />
                     <span>(832) 427-1674</span>
                   </a>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-sky-300 transition-colors">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">
-                  Secondary Line / Scheduling &amp; Support
+              <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 transition-colors">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
+                  Secondary Line / Scheduling &amp; Coordination
                 </span>
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">
+                    <h4 className="text-sm sm:text-base font-bold text-slate-900">
                       Monica Ramos
                     </h4>
                     <p className="text-xs text-slate-500">
@@ -96,9 +96,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                   <a
                     href="tel:8327459284"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#0D3155] text-white hover:bg-sky-700 font-bold text-xs transition-colors shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#0B2545] text-white hover:bg-[#081b33] font-medium text-xs transition-colors shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5 text-sky-300" weight="fill" />
+                    <Phone className="w-3.5 h-3.5 text-sky-400" weight="fill" />
                     <span>(832) 745-9284</span>
                   </a>
                 </div>
@@ -109,38 +109,36 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <div className="pt-2">
               <Button
                 onClick={onOpenBooking}
-                className="w-full bg-[#0369a1] hover:bg-[#075985] text-white font-semibold h-11 text-sm rounded-lg"
+                className="w-full bg-[#0B2545] hover:bg-[#081b33] text-white font-medium h-11 text-xs sm:text-sm rounded-full shadow-sm"
               >
-                <CalendarCheck className="w-4 h-4 mr-2" weight="bold" />
+                <CalendarCheck className="w-4 h-4 mr-2 text-sky-400" weight="bold" />
                 Schedule an Appointment Online
               </Button>
             </div>
           </div>
 
-          {/* Right Column: Clean, Simple Contact Form */}
+          {/* Right Column: Clean, Minimalist Message Form */}
           <div className="lg:col-span-7">
-            <div className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
-              <h3 className="text-xl font-bold text-[#0D3155] mb-1">
+            <div className="bg-slate-50/70 rounded-3xl p-6 sm:p-8 border border-slate-200/80">
+              <h3 className="text-lg sm:text-xl font-bold text-[#0B2545] mb-1">
                 Send a Message
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6">
-                Fill out the fields below and we will get back to you promptly.
+                Fill out the fields below and Carlos or Monica Ramos will get back to you promptly.
               </p>
 
               {formSubmitted ? (
-                <div className="py-10 text-center space-y-4">
-                  <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-                    <CheckCircle className="w-8 h-8" weight="fill" />
+                <div className="py-10 text-center space-y-3">
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                    <CheckCircle className="w-7 h-7" weight="fill" />
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900">
-                    Message Received
+                  <h4 className="text-lg font-bold text-slate-900">
+                    Message Sent Successfully
                   </h4>
-                  <p className="text-sm text-slate-600 max-w-md mx-auto">
+                  <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto">
                     Thank you, <span className="font-semibold">{formData.name}</span>.
-                    Carlos or Monica Ramos will review your inquiry and reach out
-                    to you at{" "}
-                    <span className="font-semibold">{formData.phone}</span> as
-                    soon as possible.
+                    We will review your inquiry and reach out to you at{" "}
+                    <span className="font-semibold">{formData.phone}</span>.
                   </p>
                   <Button
                     onClick={() => {
@@ -153,7 +151,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         message: "",
                       });
                     }}
-                    className="bg-[#0D3155] hover:bg-[#071c32] text-white text-xs font-semibold"
+                    className="bg-[#0B2545] hover:bg-[#081b33] text-white text-xs rounded-full mt-2"
                   >
                     Send Another Message
                   </Button>
@@ -176,7 +174,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
-                        className="bg-white text-sm"
+                        className="bg-white text-sm rounded-lg"
                       />
                     </div>
 
@@ -196,7 +194,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
-                        className="bg-white text-sm"
+                        className="bg-white text-sm rounded-lg"
                       />
                     </div>
                   </div>
@@ -217,7 +215,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
-                        className="bg-white text-sm"
+                        className="bg-white text-sm rounded-lg"
                       />
                     </div>
 
@@ -226,7 +224,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         htmlFor="cnt-subject"
                         className="text-xs font-semibold text-slate-700 block mb-1"
                       >
-                        Inquiry Topic
+                        Service Required
                       </Label>
                       <select
                         id="cnt-subject"
@@ -234,7 +232,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         onChange={(e) =>
                           setFormData({ ...formData, subject: e.target.value })
                         }
-                        className="w-full h-10 px-3 py-2 text-sm rounded-md border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                        className="w-full h-10 px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
                       >
                         <option value="Plumbing Fixtures Sourcing">
                           Plumbing Fixtures Sourcing
@@ -243,7 +241,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                           Permit Pulling Assistance
                         </option>
                         <option value="Bid Preparation / Estimate">
-                          Bid Preparation / Project Estimate
+                          Bid Preparation / Estimate
                         </option>
                         <option value="General Project Support">
                           General Project Support
@@ -258,27 +256,27 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       htmlFor="cnt-msg"
                       className="text-xs font-semibold text-slate-700 block mb-1"
                     >
-                      Message / Project Details *
+                      Project Details / Questions *
                     </Label>
                     <Textarea
                       id="cnt-msg"
-                      placeholder="Please share details about your plumbing service needs, timeline, or questions..."
+                      placeholder="Please share details regarding your plumbing requirements, fixture list, or project timeline..."
                       rows={4}
                       required
                       value={formData.message}
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      className="bg-white text-sm resize-none"
+                      className="bg-white text-sm resize-none rounded-lg"
                     />
                   </div>
 
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
                     <Button
                       type="submit"
-                      className="w-full sm:w-auto bg-[#0D3155] hover:bg-[#08223c] text-white font-semibold text-sm h-11 px-6 shadow-sm"
+                      className="w-full sm:w-auto bg-[#0B2545] hover:bg-[#081b33] text-white font-medium text-xs sm:text-sm h-11 px-7 rounded-full shadow-sm"
                     >
-                      <EnvelopeSimple className="w-4 h-4 mr-2" weight="bold" />
+                      <EnvelopeSimple className="w-4 h-4 mr-2 text-sky-400" weight="bold" />
                       Send Message
                     </Button>
                     <span className="text-xs text-slate-500">

@@ -7,86 +7,86 @@ import {
   ChatCircleText,
   FileText,
   Wrench,
+  Phone,
 } from "@phosphor-icons/react";
 
 export const WhyChooseUs: React.FC = () => {
   const points = [
     {
       icon: ShieldCheck,
-      title: "Reliable Service",
+      title: "Reliable Follow-Through",
       description:
-        "Consistent follow-through on scheduled appointments, clear timeframes, and dependable assistance for both small jobs and extensive projects.",
+        "Consistent on-time communication, dependable service, and clear timelines for both small repairs and large construction projects.",
     },
     {
       icon: Handshake,
-      title: "Professional Project Support",
+      title: "Contractor Coordination",
       description:
-        "Collaborative coordination with homeowners, builders, and general contractors to keep plumbing deliverables aligned with project milestones.",
+        "Collaborative project support with homeowners, builders, and general contractors to keep deliverables on schedule.",
     },
     {
       icon: Wrench,
       title: "Attention to Detail",
       description:
-        "Careful review of fixture specifications, connections, and code requirements before work begins to avoid costly rework.",
+        "Careful review of fixture schedules, rough-in dimensions, and code requirements before work begins to avoid costly revisions.",
     },
     {
       icon: ChatCircleText,
-      title: "Straightforward Communication",
+      title: "Direct Owner Communication",
       description:
-        "Direct communication with Carlos and Monica Ramos. No unreturned calls, hidden fees, or confusing jargon.",
+        "Speak directly with Carlos and Monica Ramos. No unreturned messages, hidden fees, or confusing runarounds.",
     },
     {
       icon: FileText,
-      title: "Accurate Bids & Documentation",
+      title: "Accurate Bids & Permits",
       description:
-        "Transparent estimates, organized fixture schedules, and proper assistance with permit documentation.",
+        "Itemized cost estimates, clear fixture takeoffs, and professional assistance preparing paperwork for city filings.",
     },
     {
       icon: Clock,
-      title: "Customer-Focused Approach",
+      title: "Customer-Focused Solutions",
       description:
-        "We listen to your specific needs, work around your project timeline, and offer practical solutions that fit your budget.",
+        "We listen to your specific project needs, respect your budget, and provide practical recommendations.",
     },
   ];
 
   return (
     <section
       id="why-us"
-      className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200 text-left"
+      className="py-18 sm:py-24 bg-slate-50/70 border-b border-slate-100 text-left"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Heading */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-200 text-[#0D3155] text-xs font-bold uppercase tracking-wider mb-3">
-            <CheckCircle className="w-4 h-4 text-[#0369a1]" weight="bold" />
+        <div className="max-w-2xl mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200/80 text-slate-700 text-xs font-medium mb-3">
+            <CheckCircle className="w-4 h-4 text-[#0284C7]" weight="bold" />
             <span>Why Ramos Plumbing Services</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#0D3155] tracking-tight">
-            Built on Reliability &amp; Direct Communication
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0B2545] tracking-tight">
+            Built on Reliability &amp; Straightforward Service
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg mt-3 leading-relaxed">
-            We focus on doing things right the first time, keeping you informed
-            at every step, and providing dependable support for all your plumbing
-            requirements.
+          <p className="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+            We focus on doing the job right, keeping you informed at every step,
+            and providing dependable support for all your plumbing needs.
           </p>
         </div>
 
         {/* 6 Grid Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {points.map((point, index) => {
             const IconComponent = point.icon;
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:border-sky-300 transition-colors text-left"
+                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/70 shadow-sm hover:border-slate-300 transition-all text-left"
               >
-                <div className="w-12 h-12 rounded-lg bg-sky-50 text-[#0369a1] flex items-center justify-center mb-5 border border-sky-100">
-                  <IconComponent className="w-6 h-6" weight="bold" />
+                <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0284C7] flex items-center justify-center mb-4">
+                  <IconComponent className="w-5 h-5" weight="bold" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">
+                <h3 className="text-base font-bold text-slate-900 mb-1.5">
                   {point.title}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {point.description}
                 </p>
               </div>
@@ -94,25 +94,25 @@ export const WhyChooseUs: React.FC = () => {
           })}
         </div>
 
-        {/* Direct Contact Reference */}
-        <div className="mt-12 p-6 rounded-xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-3 h-3 rounded-full bg-emerald-500 shrink-0" />
-            <p className="text-sm font-medium text-slate-700">
-              Ready to discuss an upcoming plumbing project or bid?
+        {/* Direct Contact Pill Reference */}
+        <div className="mt-10 p-5 rounded-2xl bg-white border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5">
+            <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
+            <p className="text-xs sm:text-sm font-medium text-slate-700">
+              Ready to discuss an upcoming plumbing bid or permit filing?
             </p>
           </div>
-          <div className="flex items-center gap-4 text-sm font-bold text-[#0D3155]">
+          <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#0B2545]">
             <a
               href="tel:8324271674"
-              className="hover:text-[#0369a1] hover:underline inline-flex items-center gap-1.5"
+              className="hover:text-[#0284C7] transition-colors inline-flex items-center gap-1.5"
             >
               <span>Carlos: (832) 427-1674</span>
             </a>
-            <span className="text-slate-600">•</span>
+            <span className="text-slate-500">•</span>
             <a
               href="tel:8327459284"
-              className="hover:text-[#0369a1] hover:underline inline-flex items-center gap-1.5"
+              className="hover:text-[#0284C7] transition-colors inline-flex items-center gap-1.5"
             >
               <span>Monica: (832) 745-9284</span>
             </a>

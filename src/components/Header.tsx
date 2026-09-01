@@ -6,8 +6,7 @@ import {
   CalendarCheck,
   List,
   X,
-  Clock,
-  ShieldCheck,
+  CaretRight,
 } from "@phosphor-icons/react";
 
 interface HeaderProps {
@@ -18,10 +17,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Why Choose Us", href: "#why-us" },
+    { name: "Why Us", href: "#why-us" },
     { name: "Reviews", href: "#reviews" },
     { name: "Contact", href: "#contact" },
   ];
@@ -35,47 +33,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-200 shadow-sm transition-all duration-200">
-      {/* Top Professional Contact Ribbon */}
-      <div className="bg-[#0D3155] text-white text-xs py-2 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-4 text-sky-100">
-            <span className="hidden sm:inline-flex items-center gap-1.5 font-medium">
-              <ShieldCheck className="w-4 h-4 text-sky-400" weight="bold" />
-              Plumbing Services &amp; Project Support
-            </span>
-            <span className="hidden md:inline-block text-sky-400/60">•</span>
-            <span className="inline-flex items-center gap-1.5 text-sky-200">
-              <Clock className="w-3.5 h-3.5 text-sky-400" weight="bold" />
-              Prompt Response &amp; Consultations
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3 sm:gap-5 ml-auto text-xs">
-            <span className="text-slate-300 hidden lg:inline">Direct Contact:</span>
-            <a
-              href="tel:8324271674"
-              className="inline-flex items-center gap-1.5 font-semibold text-white hover:text-sky-300 transition-colors"
-              title="Call Carlos Ramos"
-            >
-              <Phone className="w-3.5 h-3.5 text-sky-400" weight="fill" />
-              <span>Carlos: (832) 427-1674</span>
-            </a>
-            <span className="text-slate-400 hidden xs:inline">|</span>
-            <a
-              href="tel:8327459284"
-              className="inline-flex items-center gap-1.5 font-semibold text-white hover:text-sky-300 transition-colors"
-              title="Call Monica Ramos"
-            >
-              <Phone className="w-3.5 h-3.5 text-sky-400" weight="fill" />
-              <span>Monica: (832) 745-9284</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-100 shadow-sm transition-all duration-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <a
           href="#home"
@@ -83,14 +42,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             e.preventDefault();
             handleNavClick("#home");
           }}
-          className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-lg"
+          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-lg"
           aria-label="Ramos Plumbing Services Home"
         >
           <Logo variant="navy" size="md" />
         </a>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-7" aria-label="Main Navigation">
+        {/* Minimal Navigation */}
+        <nav className="hidden lg:flex items-center gap-8" aria-label="Main Navigation">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -99,62 +58,75 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 e.preventDefault();
                 handleNavClick(link.href);
               }}
-              className="text-sm font-semibold text-slate-700 hover:text-[#0369a1] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#0369a1] hover:after:w-full after:transition-all after:duration-200"
+              className="text-sm font-medium text-slate-600 hover:text-[#0B2545] transition-colors py-1 relative group"
             >
-              {link.name}
+              <span>{link.name}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0284C7] transition-all duration-200 group-hover:w-full" />
             </a>
           ))}
         </nav>
 
-        {/* Action CTAs */}
+        {/* Direct Contact Pills & CTA */}
         <div className="hidden sm:flex items-center gap-3">
-          <a
-            href="tel:8324271674"
-            className="inline-flex items-center gap-2 px-3.5 py-2 text-sm font-semibold text-[#0D3155] hover:bg-slate-100 rounded-lg transition-colors border border-slate-200"
-          >
-            <Phone className="w-4 h-4 text-[#0369a1]" weight="bold" />
-            <span className="hidden xl:inline">Call Now</span>
-            <span className="xl:hidden">Call</span>
-          </a>
+          {/* Subtle Phone Pills */}
+          <div className="flex items-center bg-slate-50 border border-slate-200/80 rounded-full px-3.5 py-1.5 text-xs text-slate-700">
+            <Phone className="w-3.5 h-3.5 text-[#0369a1] mr-1.5 shrink-0" weight="fill" />
+            <a
+              href="tel:8324271674"
+              className="font-semibold text-slate-800 hover:text-[#0369a1] transition-colors"
+              title="Call Carlos Ramos"
+            >
+              (832) 427-1674
+            </a>
+            <span className="mx-2 text-slate-500">•</span>
+            <a
+              href="tel:8327459284"
+              className="font-semibold text-slate-800 hover:text-[#0369a1] transition-colors"
+              title="Call Monica Ramos"
+            >
+              (832) 745-9284
+            </a>
+          </div>
 
           <Button
             onClick={() => onOpenBooking()}
-            className="bg-[#0369a1] hover:bg-[#075985] text-white font-semibold px-4 py-2 text-sm shadow-sm rounded-lg flex items-center gap-2 transition-transform active:scale-[0.98]"
+            className="bg-[#0B2545] hover:bg-[#081b33] text-white font-medium px-4 py-2 text-xs sm:text-sm rounded-full shadow-sm flex items-center gap-2 transition-transform active:scale-[0.98]"
           >
-            <CalendarCheck className="w-4 h-4" weight="bold" />
-            <span>Book an Appointment</span>
+            <CalendarCheck className="w-4 h-4 text-sky-400" weight="bold" />
+            <span>Book Appointment</span>
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Actions */}
         <div className="flex items-center gap-2 lg:hidden">
           <Button
             onClick={() => onOpenBooking()}
             size="sm"
-            className="bg-[#0369a1] hover:bg-[#075985] text-white font-semibold text-xs px-3 sm:hidden"
+            className="bg-[#0B2545] hover:bg-[#081b33] text-white font-medium text-xs px-3.5 rounded-full sm:hidden"
           >
             Book
           </Button>
+
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-700 hover:text-[#0D3155] hover:bg-slate-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500"
+            className="p-2 text-slate-700 hover:text-[#0B2545] hover:bg-slate-100 rounded-lg transition-colors focus:outline-none"
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6" weight="bold" />
+              <X className="w-5 h-5" weight="bold" />
             ) : (
-              <List className="w-6 h-6" weight="bold" />
+              <List className="w-5 h-5" weight="bold" />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer / Overlay */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top duration-200">
-          <div className="flex flex-col space-y-3">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-6 shadow-xl animate-in slide-in-from-top duration-200 text-left">
+          <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -163,30 +135,31 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="px-3 py-2 text-base font-semibold text-slate-800 hover:bg-sky-50 hover:text-[#0369a1] rounded-md transition-colors text-left"
+                className="py-2.5 px-3 text-sm font-medium text-slate-800 hover:bg-slate-50 hover:text-[#0369a1] rounded-lg transition-colors flex items-center justify-between"
               >
-                {link.name}
+                <span>{link.name}</span>
+                <CaretRight className="w-4 h-4 text-slate-400" />
               </a>
             ))}
 
-            <div className="pt-3 border-t border-slate-100 space-y-2.5">
-              <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-left">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1.5">
+            <div className="pt-4 border-t border-slate-100 space-y-3">
+              <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 space-y-2">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block">
                   Direct Phone Lines
                 </span>
-                <div className="flex flex-col gap-1.5">
+                <div className="flex flex-col gap-1.5 text-xs font-bold text-slate-800">
                   <a
                     href="tel:8324271674"
-                    className="flex items-center justify-between text-sm font-bold text-[#0D3155] hover:text-sky-700"
+                    className="flex items-center justify-between hover:text-[#0369a1]"
                   >
-                    <span>Carlos Ramos:</span>
+                    <span>Carlos Ramos</span>
                     <span className="text-[#0369a1]">(832) 427-1674</span>
                   </a>
                   <a
                     href="tel:8327459284"
-                    className="flex items-center justify-between text-sm font-bold text-[#0D3155] hover:text-sky-700"
+                    className="flex items-center justify-between hover:text-[#0369a1]"
                   >
-                    <span>Monica Ramos:</span>
+                    <span>Monica Ramos</span>
                     <span className="text-[#0369a1]">(832) 745-9284</span>
                   </a>
                 </div>
@@ -197,9 +170,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   setMobileMenuOpen(false);
                   onOpenBooking();
                 }}
-                className="w-full bg-[#0369a1] hover:bg-[#075985] text-white font-semibold py-2.5 text-sm rounded-lg"
+                className="w-full bg-[#0B2545] hover:bg-[#081b33] text-white font-medium py-2.5 text-xs rounded-xl shadow-sm"
               >
-                <CalendarCheck className="w-4 h-4 mr-2" weight="bold" />
+                <CalendarCheck className="w-4 h-4 mr-2 text-sky-400" weight="bold" />
                 Book an Appointment
               </Button>
             </div>

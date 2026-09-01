@@ -17,92 +17,79 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
   return (
     <section
       id="booking"
-      className="py-16 sm:py-24 bg-[#0D3155] text-white text-left relative overflow-hidden"
+      className="py-18 sm:py-24 bg-[#0B2545] text-white text-left relative overflow-hidden"
     >
-      {/* Background geometric accents */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `radial-gradient(#38BDF8 1px, transparent 1px)`,
-          backgroundSize: "28px 28px",
-        }}
-        aria-hidden="true"
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Booking details & phone contacts */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider">
-              <CalendarCheck className="w-4 h-4" weight="bold" />
-              <span>Easy Appointment Scheduling</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-sky-200 text-xs font-medium">
+              <CalendarCheck className="w-4 h-4 text-sky-400" weight="bold" />
+              <span>Appointment Scheduling</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight leading-tight">
-              Schedule an Appointment or Project Consultation
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight leading-tight">
+              Schedule a Service or Project Consultation
             </h2>
 
-            <p className="text-sky-100/90 text-base sm:text-lg leading-relaxed">
+            <p className="text-sky-100/80 text-sm sm:text-base leading-relaxed font-normal">
               Book a convenient time to discuss your plumbing fixtures, city
-              permit assistance, bid preparation, or job-site support. We review
-              every request promptly.
+              permit assistance, bid preparation, or on-site support. Carlos or
+              Monica Ramos will confirm your request promptly.
             </p>
 
             <div className="space-y-3 pt-2">
-              <div className="flex items-start gap-3 text-sm text-sky-100">
+              <div className="flex items-start gap-3 text-xs sm:text-sm text-sky-100/90">
                 <CheckCircle
-                  className="w-5 h-5 text-sky-400 shrink-0 mt-0.5"
+                  className="w-4 h-4 text-sky-400 shrink-0 mt-0.5"
                   weight="fill"
                 />
                 <span>
-                  <strong>Flexible Scheduling:</strong> Morning, afternoon, and
+                  <strong>Flexible Scheduling:</strong> Morning and afternoon
                   consultation windows available.
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 text-sm text-sky-100">
+              <div className="flex items-start gap-3 text-xs sm:text-sm text-sky-100/90">
                 <CheckCircle
-                  className="w-5 h-5 text-sky-400 shrink-0 mt-0.5"
+                  className="w-4 h-4 text-sky-400 shrink-0 mt-0.5"
                   weight="fill"
                 />
                 <span>
-                  <strong>Direct Owner Review:</strong> Carlos or Monica Ramos
-                  will personally confirm your appointment.
+                  <strong>Direct Owner Response:</strong> Carlos or Monica Ramos
+                  will personally follow up.
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 text-sm text-sky-100">
+              <div className="flex items-start gap-3 text-xs sm:text-sm text-sky-100/90">
                 <CheckCircle
-                  className="w-5 h-5 text-sky-400 shrink-0 mt-0.5"
+                  className="w-4 h-4 text-sky-400 shrink-0 mt-0.5"
                   weight="fill"
                 />
                 <span>
-                  <strong>Integration Ready:</strong> Built to connect directly
-                  to existing scheduling platforms.
+                  <strong>Integration Ready:</strong> Easily connected to your
+                  existing appointment calendar.
                 </span>
               </div>
             </div>
 
             {/* Direct Phone Callout */}
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/15 space-y-2">
-              <span className="text-xs font-bold text-sky-300 uppercase tracking-wider block">
-                Need Immediate Assistance?
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15 space-y-2">
+              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider block">
+                Direct Contact Lines
               </span>
-              <p className="text-xs text-sky-100">
-                Call our direct lines to speak with us right away:
-              </p>
               <div className="flex flex-wrap gap-4 pt-1">
                 <a
                   href="tel:8324271674"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-sky-300 transition-colors"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white hover:text-sky-300 transition-colors"
                 >
                   <Phone className="w-4 h-4 text-sky-400" weight="fill" />
                   <span>Carlos: (832) 427-1674</span>
                 </a>
-                <span className="text-white/30 hidden sm:inline">|</span>
+                <span className="text-white/30 hidden sm:inline">•</span>
                 <a
                   href="tel:8327459284"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-sky-300 transition-colors"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white hover:text-sky-300 transition-colors"
                 >
                   <Phone className="w-4 h-4 text-sky-400" weight="fill" />
                   <span>Monica: (832) 745-9284</span>
@@ -111,29 +98,25 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             </div>
           </div>
 
-          {/* Right Column: Interactive Scheduling Card / Ready-to-use booking widget bridge */}
+          {/* Right Column: Sleek Interactive Scheduling Card */}
           <div className="lg:col-span-6">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border border-slate-100">
+            <div className="bg-white rounded-3xl p-7 sm:p-9 text-slate-900 shadow-2xl border border-slate-100 text-left">
               <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
                 <div>
-                  <h3 className="text-xl font-bold text-[#0D3155]">
-                    Book Your Service Online
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0B2545]">
+                    Select Your Service
                   </h3>
                   <p className="text-xs text-slate-500 mt-0.5">
                     Fast 1-minute scheduling request
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-sky-50 text-[#0369a1] flex items-center justify-center">
-                  <CalendarCheck className="w-5 h-5" weight="bold" />
+                <div className="w-9 h-9 rounded-full bg-sky-50 text-[#0284C7] flex items-center justify-center">
+                  <CalendarCheck className="w-4 h-4" weight="bold" />
                 </div>
               </div>
 
-              {/* Quick Service Selection previews */}
+              {/* Service Selection pills */}
               <div className="space-y-4">
-                <p className="text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                  Popular Consultation Services:
-                </p>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {[
                     "Plumbing Fixtures Sourcing",
@@ -145,31 +128,29 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                       key={idx}
                       type="button"
                       onClick={() => onOpenBooking(serviceName)}
-                      className="text-left p-3 rounded-lg border border-slate-200 hover:border-sky-500 hover:bg-sky-50 transition-all text-xs font-semibold text-slate-800 flex items-center justify-between group"
+                      className="text-left p-3.5 rounded-xl border border-slate-200/80 hover:border-slate-400 hover:bg-slate-50 transition-all text-xs font-semibold text-slate-800 flex items-center justify-between group"
                     >
                       <span>{serviceName}</span>
                       <ArrowRight
-                        className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#0369a1] transition-colors"
+                        className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#0284C7] transition-colors"
                         weight="bold"
                       />
                     </button>
                   ))}
                 </div>
 
-                <div className="pt-4 space-y-3">
+                <div className="pt-3 space-y-3">
                   <Button
                     onClick={() => onOpenBooking()}
-                    className="w-full h-12 bg-[#0369a1] hover:bg-[#075985] text-white font-bold text-sm shadow-md rounded-lg flex items-center justify-center gap-2"
+                    className="w-full h-11 bg-[#0B2545] hover:bg-[#081b33] text-white font-medium text-xs sm:text-sm rounded-full flex items-center justify-center gap-2 shadow-sm"
                   >
-                    <CalendarCheck className="w-5 h-5" weight="bold" />
+                    <CalendarCheck className="w-4 h-4 text-sky-400" weight="bold" />
                     <span>Open Appointment Scheduler</span>
                   </Button>
 
-                  {/* Booking App Bridge Notice for Client integration */}
-                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 text-center">
-                    <p className="text-xs text-slate-600">
-                      <strong>Client Booking Platform Bridge:</strong> Directly
-                      integrated for seamless appointment confirmation.
+                  <div className="p-3 bg-slate-50 rounded-xl border border-slate-200/70 text-center">
+                    <p className="text-xs text-slate-500">
+                      Direct integration ready for external booking calendars.
                     </p>
                   </div>
                 </div>
