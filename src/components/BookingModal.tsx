@@ -69,10 +69,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[520px] p-0 overflow-hidden border-slate-200 rounded-3xl">
-        <div className="bg-[#0B2545] p-6 text-white text-left">
-          <div className="flex items-center gap-2 text-sky-400 text-xs font-semibold mb-1">
+        <div className="bg-[#003c7a] p-6 text-white text-left">
+          <div className="flex items-center gap-2 text-sky-300 text-xs font-semibold mb-1">
             <CalendarCheck className="w-4 h-4" weight="bold" />
-            <span>Ramos Plumbing Services</span>
+            <span>I Know A Plumber</span>
           </div>
           <DialogTitle className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             Schedule an Appointment
@@ -84,7 +84,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
         <div className="p-6 pt-4 text-left">
           {submitted ? (
-            <div className="py-6 text-center space-y-4">
+            <div className="py-6 text-center space-y-3">
               <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                 <CheckCircle className="w-7 h-7" weight="fill" />
               </div>
@@ -95,7 +95,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-sm mx-auto">
                   Thank you, <span className="font-semibold">{formData.name}</span>.
                   We will review your request for{" "}
-                  <span className="font-semibold text-[#0284C7]">{service}</span>{" "}
+                  <span className="font-semibold text-[#0060c0]">{service}</span>{" "}
                   and call you shortly at{" "}
                   <span className="font-semibold">{formData.phone}</span>.
                 </p>
@@ -125,7 +125,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <div className="pt-2 flex flex-col sm:flex-row gap-2 justify-center">
                 <Button
                   onClick={handleReset}
-                  className="bg-[#0B2545] hover:bg-[#081b33] text-white rounded-full text-xs"
+                  className="bg-[#003c7a] hover:bg-[#002f60] text-white rounded-full text-xs"
                 >
                   Done
                 </Button>
@@ -133,7 +133,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   href="tel:8324271674"
                   className="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-semibold rounded-full border border-slate-300 text-slate-700 hover:bg-slate-50"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#0284C7]" weight="bold" />
+                  <Phone className="w-3.5 h-3.5 text-[#0060c0]" weight="bold" />
                   Call (832) 427-1674
                 </a>
               </div>
@@ -152,7 +152,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     id="service-select"
                     value={service}
                     onChange={(e) => setService(e.target.value)}
-                    className="w-full h-10 px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                    className="w-full h-10 px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
                     required
                   >
                     <option value="Plumbing Fixtures Sourcing & Installation">
@@ -293,7 +293,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         preferredTime: e.target.value,
                       })
                     }
-                    className="w-full h-10 px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                    className="w-full h-10 px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
                   >
                     <option value="Morning (8AM - 12PM)">
                       Morning (8:00 AM – 12:00 PM)
@@ -333,9 +333,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <div className="pt-2">
                 <Button
                   type="submit"
-                  className="w-full h-11 bg-[#0B2545] hover:bg-[#081b33] text-white font-medium text-xs sm:text-sm rounded-full shadow-sm"
+                  className="w-full h-11 bg-[#003c7a] hover:bg-[#002f60] text-white font-medium text-xs sm:text-sm rounded-full shadow-sm"
                 >
-                  <CalendarCheck className="w-4 h-4 mr-2 text-sky-400" weight="bold" />
+                  <CalendarCheck className="w-4 h-4 mr-2 text-sky-300" weight="bold" />
                   Confirm Appointment Request
                 </Button>
               </div>
@@ -345,14 +345,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   Prefer direct phone scheduling? Call Carlos:{" "}
                   <a
                     href="tel:8324271674"
-                    className="font-bold text-[#0B2545] hover:underline"
+                    className="font-bold text-[#003c7a] hover:underline"
                   >
                     (832) 427-1674
                   </a>{" "}
                   or Monica:{" "}
                   <a
                     href="tel:8327459284"
-                    className="font-bold text-[#0B2545] hover:underline"
+                    className="font-bold text-[#003c7a] hover:underline"
                   >
                     (832) 745-9284
                   </a>

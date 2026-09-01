@@ -41,24 +41,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column: Direct Phone Numbers & Information */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-50 border border-slate-200/80 text-slate-700 text-xs font-medium">
-              <Phone className="w-4 h-4 text-[#0284C7]" weight="bold" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/70 border border-blue-100 text-[#003c7a] text-xs font-semibold">
+              <Phone className="w-4 h-4 text-[#0060c0]" weight="bold" />
               <span>Contact Us</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0B2545] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#003c7a] tracking-tight">
               Direct Contact
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               We are ready to assist with your plumbing fixtures, permit pulling,
               project estimates, and service inquiries. Reach out to Carlos or
-              Monica Ramos directly by phone or submit the contact form.
+              Monica Ramos at <strong>I Know A Plumber</strong> directly by phone or submit the contact form.
             </p>
 
             {/* Direct Phone Cards */}
             <div className="space-y-3 pt-2">
-              <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 transition-colors">
+              <div className="p-4 rounded-2xl bg-blue-50/40 border border-blue-100 hover:border-blue-200 transition-colors">
                 <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
                   Primary Contact / Project Inquiries
                 </span>
@@ -73,15 +73,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                   <a
                     href="tel:8324271674"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#0B2545] text-white hover:bg-[#081b33] font-medium text-xs transition-colors shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#003c7a] text-white hover:bg-[#002f60] font-medium text-xs transition-colors shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5 text-sky-400" weight="fill" />
+                    <Phone className="w-3.5 h-3.5 text-sky-300" weight="fill" />
                     <span>(832) 427-1674</span>
                   </a>
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 transition-colors">
+              <div className="p-4 rounded-2xl bg-blue-50/40 border border-blue-100 hover:border-blue-200 transition-colors">
                 <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
                   Secondary Line / Scheduling &amp; Coordination
                 </span>
@@ -96,9 +96,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                   <a
                     href="tel:8327459284"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#0B2545] text-white hover:bg-[#081b33] font-medium text-xs transition-colors shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#003c7a] text-white hover:bg-[#002f60] font-medium text-xs transition-colors shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5 text-sky-400" weight="fill" />
+                    <Phone className="w-3.5 h-3.5 text-sky-300" weight="fill" />
                     <span>(832) 745-9284</span>
                   </a>
                 </div>
@@ -109,9 +109,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <div className="pt-2">
               <Button
                 onClick={onOpenBooking}
-                className="w-full bg-[#0B2545] hover:bg-[#081b33] text-white font-medium h-11 text-xs sm:text-sm rounded-full shadow-sm"
+                className="w-full bg-[#003c7a] hover:bg-[#002f60] text-white font-medium h-11 text-xs sm:text-sm rounded-full shadow-sm"
               >
-                <CalendarCheck className="w-4 h-4 mr-2 text-sky-400" weight="bold" />
+                <CalendarCheck className="w-4 h-4 mr-2 text-sky-300" weight="bold" />
                 Schedule an Appointment Online
               </Button>
             </div>
@@ -120,7 +120,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           {/* Right Column: Clean, Minimalist Message Form */}
           <div className="lg:col-span-7">
             <div className="bg-slate-50/70 rounded-3xl p-6 sm:p-8 border border-slate-200/80">
-              <h3 className="text-lg sm:text-xl font-bold text-[#0B2545] mb-1">
+              <h3 className="text-lg sm:text-xl font-bold text-[#003c7a] mb-1">
                 Send a Message
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6">
@@ -151,7 +151,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         message: "",
                       });
                     }}
-                    className="bg-[#0B2545] hover:bg-[#081b33] text-white text-xs rounded-full mt-2"
+                    className="bg-[#003c7a] hover:bg-[#002f60] text-white text-xs rounded-full mt-2"
                   >
                     Send Another Message
                   </Button>
@@ -232,7 +232,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         onChange={(e) =>
                           setFormData({ ...formData, subject: e.target.value })
                         }
-                        className="w-full h-10 px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                        className="w-full h-10 px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
                       >
                         <option value="Plumbing Fixtures Sourcing">
                           Plumbing Fixtures Sourcing
@@ -274,9 +274,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
                     <Button
                       type="submit"
-                      className="w-full sm:w-auto bg-[#0B2545] hover:bg-[#081b33] text-white font-medium text-xs sm:text-sm h-11 px-7 rounded-full shadow-sm"
+                      className="w-full sm:w-auto bg-[#003c7a] hover:bg-[#002f60] text-white font-medium text-xs sm:text-sm h-11 px-7 rounded-full shadow-sm"
                     >
-                      <EnvelopeSimple className="w-4 h-4 mr-2 text-sky-400" weight="bold" />
+                      <EnvelopeSimple className="w-4 h-4 mr-2 text-sky-300" weight="bold" />
                       Send Message
                     </Button>
                     <span className="text-xs text-slate-500">

@@ -26,7 +26,7 @@ export const Reviews: React.FC = () => {
       projectType: "Bathroom Fixtures & Sinks",
       rating: 5,
       comment:
-        "Carlos and Monica were very communicative from start to finish. They helped us source all the plumbing fixtures for our two bathrooms and coordinated the installation smoothly. Straightforward pricing with no surprises.",
+        "Carlos and Monica were very communicative from start to finish. They helped us source all the plumbing fixtures for our two bathrooms and coordinated everything smoothly. Straightforward pricing with no surprises.",
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ export const Reviews: React.FC = () => {
       projectType: "City Permit Assistance & Support",
       rating: 5,
       comment:
-        "Working with Ramos Plumbing Services on our permit filings and bid preparation saved our team days of back-and-forth. Prompt, professional, and easy to reach by phone whenever we had a code question.",
+        "Working with I Know A Plumber on our permit filings and bid preparation saved our team days of back-and-forth. Prompt, professional, and easy to reach by phone whenever we had a code question.",
     },
     {
       id: 3,
@@ -96,25 +96,25 @@ export const Reviews: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-200/80 text-slate-700 text-xs font-medium mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/70 border border-blue-100 text-[#003c7a] text-xs font-semibold mb-3">
               <Star className="w-4 h-4 text-amber-500" weight="fill" />
               <span>Customer Reviews</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0B2545] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#003c7a] tracking-tight">
               Client Feedback
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
               Authentic feedback from homeowners, contractors, and project
-              managers who have worked with Ramos Plumbing Services.
+              managers who have worked with <strong>I Know A Plumber</strong>.
             </p>
           </div>
 
           <Button
             onClick={() => setReviewModalOpen(true)}
             variant="outline"
-            className="border-slate-200 text-[#0B2545] hover:bg-slate-50 font-medium text-xs sm:text-sm rounded-full shrink-0 self-start md:self-auto h-10 px-4"
+            className="border-slate-200 text-[#003c7a] hover:bg-slate-50 font-medium text-xs sm:text-sm rounded-full shrink-0 self-start md:self-auto h-10 px-4"
           >
-            <PlusCircle className="w-4 h-4 mr-2 text-[#0284C7]" weight="bold" />
+            <PlusCircle className="w-4 h-4 mr-2 text-[#0060c0]" weight="bold" />
             Leave a Review
           </Button>
         </div>
@@ -124,7 +124,7 @@ export const Reviews: React.FC = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-slate-50/70 rounded-2xl p-6 sm:p-7 border border-slate-200/70 flex flex-col justify-between hover:border-slate-300 transition-colors"
+              className="bg-slate-50/70 rounded-2xl p-6 sm:p-7 border border-slate-200/70 flex flex-col justify-between hover:border-blue-200 transition-colors"
             >
               <div>
                 {/* Rating Stars & Quote Icon */}
@@ -149,7 +149,7 @@ export const Reviews: React.FC = () => {
               {/* Client Info */}
               <div className="pt-4 border-t border-slate-200/60">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#0B2545] text-white flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#003c7a] text-white flex items-center justify-center font-bold text-xs">
                     {review.name.charAt(0)}
                   </div>
                   <div>
@@ -177,7 +177,7 @@ export const Reviews: React.FC = () => {
       <Dialog open={reviewModalOpen} onOpenChange={setReviewModalOpen}>
         <DialogContent className="sm:max-w-[480px] p-6 text-left rounded-2xl">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold text-[#0B2545]">
+            <DialogTitle className="text-xl font-bold text-[#003c7a]">
               Share Your Experience
             </DialogTitle>
             <DialogDescription className="text-xs sm:text-sm text-slate-600">
@@ -195,11 +195,11 @@ export const Reviews: React.FC = () => {
                 Review Submitted
               </h3>
               <p className="text-xs text-slate-600 max-w-xs mx-auto">
-                Thank you for supporting Ramos Plumbing Services.
+                Thank you for supporting I Know A Plumber.
               </p>
               <Button
                 onClick={handleCloseReviewModal}
-                className="bg-[#0B2545] hover:bg-[#081b33] text-white text-xs rounded-full mt-2"
+                className="bg-[#003c7a] hover:bg-[#002f60] text-white text-xs rounded-full mt-2"
               >
                 Close
               </Button>
@@ -275,7 +275,7 @@ export const Reviews: React.FC = () => {
                 </Label>
                 <Textarea
                   id="rev-comment"
-                  placeholder="Describe your experience with Ramos Plumbing Services..."
+                  placeholder="Describe your experience with I Know A Plumber..."
                   rows={4}
                   required
                   value={newReview.comment}
@@ -297,7 +297,7 @@ export const Reviews: React.FC = () => {
                 </Button>
                 <Button
                   type="submit"
-                  className="bg-[#0B2545] hover:bg-[#081b33] text-white text-xs font-medium rounded-full px-5"
+                  className="bg-[#003c7a] hover:bg-[#002f60] text-white text-xs font-medium rounded-full px-5"
                 >
                   Submit Review
                 </Button>

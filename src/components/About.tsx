@@ -27,7 +27,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
                 <div className="rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm bg-white">
                   <img
                     src="/assets/plumbing-fixtures.jpg"
-                    alt="Plumbing fixtures and bathroom installation"
+                    alt="Plumbing fixtures and bathroom installation - I Know A Plumber"
                     className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
@@ -83,20 +83,20 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
 
           {/* Text Content: Authentic, straightforward, sleek presentation */}
           <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200/80 text-slate-700 text-xs font-medium">
-              <UserCheck className="w-4 h-4 text-[#0284C7]" weight="bold" />
-              <span>About Carlos &amp; Monica Ramos</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/70 border border-blue-100 text-[#003c7a] text-xs font-semibold">
+              <UserCheck className="w-4 h-4 text-[#0060c0]" weight="bold" />
+              <span>About I Know A Plumber</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0B2545] tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#003c7a] tracking-tight leading-tight">
               Practical Plumbing Solutions &amp; Dependable Support
             </h2>
 
             <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
               <p>
-                At Ramos Plumbing Services, Carlos and Monica Ramos help property
+                At <strong>I Know A Plumber</strong>, Carlos and Monica Ramos help property
                 owners, general contractors, and remodelers navigate their
-                plumbing needs with clarity and dependability.
+                plumbing needs with clarity, speed, and dependability.
               </p>
               <p>
                 We focus on sourcing quality plumbing fixtures, assisting with
@@ -115,7 +115,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
               <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-200/70 shadow-sm">
                 <CheckCircle
-                  className="w-5 h-5 text-[#0284C7] shrink-0 mt-0.5"
+                  className="w-5 h-5 text-[#0060c0] shrink-0 mt-0.5"
                   weight="fill"
                 />
                 <div>
@@ -130,7 +130,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
 
               <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-200/70 shadow-sm">
                 <CheckCircle
-                  className="w-5 h-5 text-[#0284C7] shrink-0 mt-0.5"
+                  className="w-5 h-5 text-[#0060c0] shrink-0 mt-0.5"
                   weight="fill"
                 />
                 <div>
@@ -148,17 +148,17 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
             <div className="flex flex-wrap items-center gap-4 pt-3">
               <Button
                 onClick={onOpenBooking}
-                className="bg-[#0B2545] hover:bg-[#081b33] text-white font-medium px-6 h-11 rounded-full text-xs sm:text-sm shadow-sm"
+                className="bg-[#003c7a] hover:bg-[#002f60] text-white font-medium px-6 h-11 rounded-full text-xs sm:text-sm shadow-sm"
               >
-                <CalendarCheck className="w-4 h-4 mr-2 text-sky-400" weight="bold" />
+                <CalendarCheck className="w-4 h-4 mr-2 text-sky-300" weight="bold" />
                 Schedule a Consultation
               </Button>
 
               <a
                 href="tel:8324271674"
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#0284C7] transition-colors"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#0060c0] transition-colors"
               >
-                <Phone className="w-4 h-4 text-[#0284C7]" weight="fill" />
+                <Phone className="w-4 h-4 text-[#0060c0]" weight="fill" />
                 <span>Call Carlos: (832) 427-1674</span>
               </a>
             </div>

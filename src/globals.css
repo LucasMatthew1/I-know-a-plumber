@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* Sleek, Modern, Clean Plumbing Brand Palette */
+    /* "I Know A Plumber" Brand Palette — Matching the Logo Blue */
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
 
@@ -16,18 +16,18 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Deep Architectural Navy — Sleek, modern, dependable */
-    --primary: 213 72% 16%;
+    /* Rich Deep Plumber Blue — Matching logo deep hues */
+    --primary: 212 90% 22%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 213 72% 16%;
+    --secondary: 210 50% 96%;
+    --secondary-foreground: 212 90% 22%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215 16% 47%;
 
-    /* Precision Azure Sky Accent */
-    --accent: 199 89% 48%;
+    /* Official Logo Blue Accent (#0060c0 / HSL 210 100% 38%) */
+    --accent: 210 100% 38%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -35,7 +35,7 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 199 89% 48%;
+    --ring: 210 100% 38%;
 
     --radius: 0.75rem;
 
@@ -53,7 +53,7 @@
     --popover: 222 47% 9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 199 89% 48%;
+    --primary: 210 100% 45%;
     --primary-foreground: 222 47% 7%;
 
     --secondary: 217 33% 17%;
@@ -62,7 +62,7 @@
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 199 89% 48%;
+    --accent: 210 100% 45%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62% 45%;
@@ -70,7 +70,7 @@
 
     --border: 217 33% 18%;
     --input: 217 33% 18%;
-    --ring: 199 89% 48%;
+    --ring: 210 100% 45%;
   }
 }
 

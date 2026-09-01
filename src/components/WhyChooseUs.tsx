@@ -58,11 +58,11 @@ export const WhyChooseUs: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Heading */}
         <div className="max-w-2xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200/80 text-slate-700 text-xs font-medium mb-3">
-            <CheckCircle className="w-4 h-4 text-[#0284C7]" weight="bold" />
-            <span>Why Ramos Plumbing Services</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/70 border border-blue-100 text-[#003c7a] text-xs font-semibold mb-3">
+            <CheckCircle className="w-4 h-4 text-[#0060c0]" weight="bold" />
+            <span>Why Choose I Know A Plumber</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0B2545] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#003c7a] tracking-tight">
             Built on Reliability &amp; Straightforward Service
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
@@ -78,9 +78,9 @@ export const WhyChooseUs: React.FC = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/70 shadow-sm hover:border-slate-300 transition-all text-left"
+                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/70 shadow-sm hover:border-blue-200 transition-all text-left"
               >
-                <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0284C7] flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0060c0] flex items-center justify-center mb-4">
                   <IconComponent className="w-5 h-5" weight="bold" />
                 </div>
                 <h3 className="text-base font-bold text-slate-900 mb-1.5">
@@ -102,17 +102,17 @@ export const WhyChooseUs: React.FC = () => {
               Ready to discuss an upcoming plumbing bid or permit filing?
             </p>
           </div>
-          <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#0B2545]">
+          <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#003c7a]">
             <a
               href="tel:8324271674"
-              className="hover:text-[#0284C7] transition-colors inline-flex items-center gap-1.5"
+              className="hover:text-[#0060c0] transition-colors inline-flex items-center gap-1.5"
             >
               <span>Carlos: (832) 427-1674</span>
             </a>
             <span className="text-slate-500">•</span>
             <a
               href="tel:8327459284"
-              className="hover:text-[#0284C7] transition-colors inline-flex items-center gap-1.5"
+              className="hover:text-[#0060c0] transition-colors inline-flex items-center gap-1.5"
             >
               <span>Monica: (832) 745-9284</span>
             </a>

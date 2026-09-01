@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
   };
 
   return (
-    <footer className="bg-[#0B2545] text-white text-left pt-16 pb-20 sm:pb-12 border-t border-slate-800">
+    <footer className="bg-[#002f60] text-white text-left pt-16 pb-20 sm:pb-12 border-t border-[#00244a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10">
           {/* Col 1: Brand & Bio */}
@@ -40,11 +40,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             <Logo variant="light" size="lg" />
             <p className="text-sky-100/75 text-xs sm:text-sm leading-relaxed max-w-sm">
               Dependable plumbing services, fixture sourcing, municipal permit
-              assistance, bid preparation, and project coordination.
+              assistance, accurate bid preparation, and project coordination.
             </p>
 
             <div className="pt-2 flex flex-col gap-2">
-              <span className="text-xs font-semibold text-sky-400 uppercase tracking-wider">
+              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">
                 Direct Contact Phone Lines:
               </span>
               <div className="flex flex-col gap-1.5 text-xs sm:text-sm font-medium text-white">
@@ -52,14 +52,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   href="tel:8324271674"
                   className="hover:text-sky-300 transition-colors inline-flex items-center gap-2"
                 >
-                  <Phone className="w-4 h-4 text-sky-400" weight="fill" />
+                  <Phone className="w-4 h-4 text-sky-300" weight="fill" />
                   <span>Carlos Ramos: (832) 427-1674</span>
                 </a>
                 <a
                   href="tel:8327459284"
                   className="hover:text-sky-300 transition-colors inline-flex items-center gap-2"
                 >
-                  <Phone className="w-4 h-4 text-sky-400" weight="fill" />
+                  <Phone className="w-4 h-4 text-sky-300" weight="fill" />
                   <span>Monica Ramos: (832) 745-9284</span>
                 </a>
               </div>
@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
           {/* Col 2: Navigation Links */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-semibold text-sky-400 uppercase tracking-wider">
+            <h4 className="text-xs font-semibold text-sky-300 uppercase tracking-wider">
               Quick Links
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-sky-100/80 font-normal">
@@ -149,7 +149,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
           {/* Col 3: Services & CTA */}
           <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-xs font-semibold text-sky-400 uppercase tracking-wider">
+            <h4 className="text-xs font-semibold text-sky-300 uppercase tracking-wider">
               Appointments &amp; Support
             </h4>
             <p className="text-xs text-sky-100/75 leading-relaxed">
@@ -159,9 +159,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
             <Button
               onClick={() => onOpenBooking()}
-              className="w-full bg-white hover:bg-slate-100 text-[#0B2545] font-semibold text-xs sm:text-sm h-11 rounded-full flex items-center justify-center gap-2 shadow-sm"
+              className="w-full bg-white hover:bg-slate-100 text-[#003c7a] font-semibold text-xs sm:text-sm h-11 rounded-full flex items-center justify-center gap-2 shadow-sm"
             >
-              <CalendarCheck className="w-4 h-4 text-[#0284C7]" weight="bold" />
+              <CalendarCheck className="w-4 h-4 text-[#0060c0]" weight="bold" />
               <span>Book an Appointment</span>
             </Button>
           </div>
@@ -170,7 +170,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         {/* Bottom Legal & Copyright Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sky-200/60">
           <p>
-            &copy; {currentYear} Ramos Plumbing Services. All rights reserved.
+            &copy; {currentYear} I Know A Plumber. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4">
@@ -200,13 +200,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
       >
         <DialogContent className="sm:max-w-[500px] text-left p-6 rounded-2xl">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold text-[#0B2545]">
+            <DialogTitle className="text-xl font-bold text-[#003c7a]">
               {legalModal === "privacy"
                 ? "Privacy Policy"
                 : "Terms of Service"}
             </DialogTitle>
             <DialogDescription className="text-xs text-slate-500">
-              Ramos Plumbing Services • Last updated {currentYear}
+              I Know A Plumber • Last updated {currentYear}
             </DialogDescription>
           </DialogHeader>
 
@@ -214,7 +214,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             {legalModal === "privacy" ? (
               <>
                 <p>
-                  At Ramos Plumbing Services, we respect your privacy.
+                  At I Know A Plumber, we respect your privacy.
                   Information collected through this website (such as name, phone
                   number, email, and service requests) is used solely to respond
                   to your inquiries, schedule appointments, and coordinate
@@ -229,7 +229,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               <>
                 <p>
                   All services, fixture consultations, permit assistance, and
-                  project bids provided by Ramos Plumbing Services are subject
+                  project bids provided by I Know A Plumber are subject
                   to mutual agreement and project specifications.
                 </p>
                 <p>

@@ -42,8 +42,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             e.preventDefault();
             handleNavClick("#home");
           }}
-          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-lg"
-          aria-label="Ramos Plumbing Services Home"
+          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
+          aria-label="I Know A Plumber Home"
         >
           <Logo variant="navy" size="md" />
         </a>
@@ -58,10 +58,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 e.preventDefault();
                 handleNavClick(link.href);
               }}
-              className="text-sm font-medium text-slate-600 hover:text-[#0B2545] transition-colors py-1 relative group"
+              className="text-sm font-medium text-slate-600 hover:text-[#003c7a] transition-colors py-1 relative group"
             >
               <span>{link.name}</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0284C7] transition-all duration-200 group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0060c0] transition-all duration-200 group-hover:w-full" />
             </a>
           ))}
         </nav>
@@ -69,19 +69,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
         {/* Direct Contact Pills & CTA */}
         <div className="hidden sm:flex items-center gap-3">
           {/* Subtle Phone Pills */}
-          <div className="flex items-center bg-slate-50 border border-slate-200/80 rounded-full px-3.5 py-1.5 text-xs text-slate-700">
-            <Phone className="w-3.5 h-3.5 text-[#0369a1] mr-1.5 shrink-0" weight="fill" />
+          <div className="flex items-center bg-blue-50/70 border border-blue-100 rounded-full px-3.5 py-1.5 text-xs text-slate-700">
+            <Phone className="w-3.5 h-3.5 text-[#0060c0] mr-1.5 shrink-0" weight="fill" />
             <a
               href="tel:8324271674"
-              className="font-semibold text-slate-800 hover:text-[#0369a1] transition-colors"
+              className="font-semibold text-slate-800 hover:text-[#0060c0] transition-colors"
               title="Call Carlos Ramos"
             >
               (832) 427-1674
             </a>
-            <span className="mx-2 text-slate-500">•</span>
+            <span className="mx-2 text-slate-400">•</span>
             <a
               href="tel:8327459284"
-              className="font-semibold text-slate-800 hover:text-[#0369a1] transition-colors"
+              className="font-semibold text-slate-800 hover:text-[#0060c0] transition-colors"
               title="Call Monica Ramos"
             >
               (832) 745-9284
@@ -90,9 +90,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
           <Button
             onClick={() => onOpenBooking()}
-            className="bg-[#0B2545] hover:bg-[#081b33] text-white font-medium px-4 py-2 text-xs sm:text-sm rounded-full shadow-sm flex items-center gap-2 transition-transform active:scale-[0.98]"
+            className="bg-[#003c7a] hover:bg-[#002f60] text-white font-medium px-4 py-2 text-xs sm:text-sm rounded-full shadow-sm flex items-center gap-2 transition-transform active:scale-[0.98]"
           >
-            <CalendarCheck className="w-4 h-4 text-sky-400" weight="bold" />
+            <CalendarCheck className="w-4 h-4 text-sky-300" weight="bold" />
             <span>Book Appointment</span>
           </Button>
         </div>
@@ -102,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           <Button
             onClick={() => onOpenBooking()}
             size="sm"
-            className="bg-[#0B2545] hover:bg-[#081b33] text-white font-medium text-xs px-3.5 rounded-full sm:hidden"
+            className="bg-[#003c7a] hover:bg-[#002f60] text-white font-medium text-xs px-3.5 rounded-full sm:hidden"
           >
             Book
           </Button>
@@ -110,7 +110,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-700 hover:text-[#0B2545] hover:bg-slate-100 rounded-lg transition-colors focus:outline-none"
+            className="p-2 text-slate-700 hover:text-[#003c7a] hover:bg-slate-100 rounded-lg transition-colors focus:outline-none"
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle Navigation Menu"
           >
@@ -135,7 +135,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="py-2.5 px-3 text-sm font-medium text-slate-800 hover:bg-slate-50 hover:text-[#0369a1] rounded-lg transition-colors flex items-center justify-between"
+                className="py-2.5 px-3 text-sm font-medium text-slate-800 hover:bg-blue-50 hover:text-[#0060c0] rounded-lg transition-colors flex items-center justify-between"
               >
                 <span>{link.name}</span>
                 <CaretRight className="w-4 h-4 text-slate-400" />
@@ -143,24 +143,24 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             ))}
 
             <div className="pt-4 border-t border-slate-100 space-y-3">
-              <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 space-y-2">
+              <div className="bg-blue-50/60 p-3.5 rounded-xl border border-blue-100 space-y-2">
                 <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block">
                   Direct Phone Lines
                 </span>
                 <div className="flex flex-col gap-1.5 text-xs font-bold text-slate-800">
                   <a
                     href="tel:8324271674"
-                    className="flex items-center justify-between hover:text-[#0369a1]"
+                    className="flex items-center justify-between hover:text-[#0060c0]"
                   >
                     <span>Carlos Ramos</span>
-                    <span className="text-[#0369a1]">(832) 427-1674</span>
+                    <span className="text-[#0060c0]">(832) 427-1674</span>
                   </a>
                   <a
                     href="tel:8327459284"
-                    className="flex items-center justify-between hover:text-[#0369a1]"
+                    className="flex items-center justify-between hover:text-[#0060c0]"
                   >
                     <span>Monica Ramos</span>
-                    <span className="text-[#0369a1]">(832) 745-9284</span>
+                    <span className="text-[#0060c0]">(832) 745-9284</span>
                   </a>
                 </div>
               </div>
@@ -170,9 +170,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   setMobileMenuOpen(false);
                   onOpenBooking();
                 }}
-                className="w-full bg-[#0B2545] hover:bg-[#081b33] text-white font-medium py-2.5 text-xs rounded-xl shadow-sm"
+                className="w-full bg-[#003c7a] hover:bg-[#002f60] text-white font-medium py-2.5 text-xs rounded-xl shadow-sm"
               >
-                <CalendarCheck className="w-4 h-4 mr-2 text-sky-400" weight="bold" />
+                <CalendarCheck className="w-4 h-4 mr-2 text-sky-300" weight="bold" />
                 Book an Appointment
               </Button>
             </div>

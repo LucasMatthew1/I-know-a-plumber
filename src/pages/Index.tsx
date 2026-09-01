@@ -25,7 +25,7 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-sky-500/20 selection:text-[#0B2545] pb-14 sm:pb-0">
+    <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-blue-500/20 selection:text-[#003c7a] pb-16 sm:pb-0">
       {/* Primary Header with Dual Phone Contact Ribbon and Navigation */}
       <Header onOpenBooking={handleOpenBooking} />
 
