@@ -73,6 +73,30 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </li>
               <li>
                 <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("#services");
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#reviews"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("#reviews");
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Client Reviews
+                </a>
+              </li>
+              <li>
+                <a
                   href="#about"
                   onClick={(e) => {
                     e.preventDefault();
@@ -85,18 +109,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </li>
               <li>
                 <a
-                  href="#services"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("#services");
-                  }}
-                  className="hover:text-white transition-colors"
-                >
-                  Core Services
-                </a>
-              </li>
-              <li>
-                <a
                   href="#contact"
                   onClick={(e) => {
                     e.preventDefault();
@@ -104,7 +116,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Contact &amp; Booking
+                  Contact &amp; Book
                 </a>
               </li>
             </ul>

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Preloader } from "@/components/Preloader";
 import { Header } from "@/components/Header";
+import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { Hero } from "@/components/Hero";
-import { About } from "@/components/About";
 import { Services } from "@/components/Services";
+import { About } from "@/components/About";
+import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { QuickCallBar } from "@/components/QuickCallBar";
@@ -30,12 +32,18 @@ const Index: React.FC = () => {
       {/* Sleek Header with Prominently Sized Logo & Direct Call Pill */}
       <Header onOpenBooking={handleOpenBooking} />
 
+      {/* Interactive Emergency Service Call Banner with Issue Selector */}
+      <EmergencyBanner onOpenBooking={handleOpenBooking} />
+
       <main className="flex-1">
         {/* High-Impact Hero with Direct Call CTA & Core Badges */}
         <Hero onOpenBooking={handleOpenBooking} />
 
         {/* 4 Core Plumbing & Contractor Services */}
         <Services onOpenBooking={handleOpenBooking} />
+
+        {/* Customer Review Testimonial Slider */}
+        <TestimonialSlider onOpenBooking={handleOpenBooking} />
 
         {/* Authentic Background & Key Highlights */}
         <About onOpenBooking={() => handleOpenBooking("General Consultation")} />

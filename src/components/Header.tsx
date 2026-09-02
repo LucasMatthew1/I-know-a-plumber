@@ -17,9 +17,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Why Us", href: "#why-us" },
+    { name: "Reviews", href: "#reviews" },
+    { name: "About", href: "#about" },
     { name: "Contact & Book", href: "#contact" },
   ];
 
