@@ -23,12 +23,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Refined Typography & High-Conversion CTAs */}
           <div className="lg:col-span-7 text-left space-y-7">
-            {/* Subtle Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/70 border border-blue-100 text-[#003c7a] text-xs font-semibold">
-              <span className="flex h-2 w-2 rounded-full bg-[#0060c0] motion-safe:animate-pulse" />
-              <span>I Know A Plumber • Carlos Ramos</span>
-            </div>
-
             {/* Display Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-display font-extrabold text-[#003c7a] tracking-tight leading-[1.12] text-balance">
               Reliable Plumbing Services &amp; Project Support
