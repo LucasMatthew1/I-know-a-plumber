@@ -32,39 +32,33 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
   };
 
   return (
-    <footer className="bg-[#002f60] text-white text-left pt-16 pb-20 sm:pb-12 border-t border-[#00244a]">
+    <footer className="bg-[#002f60] text-white text-left pt-14 pb-20 sm:pb-12 border-t border-[#00244a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10">
-          {/* Col 1: Brand & Bio */}
-          <div className="lg:col-span-5 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-10 border-b border-white/10 items-start">
+          {/* Col 1: Brand & Direct Line */}
+          <div className="md:col-span-6 space-y-4">
             <Logo variant="light" size="lg" />
-            <p className="text-sky-100/75 text-xs sm:text-sm leading-relaxed max-w-sm">
-              Dependable plumbing services, fixture sourcing, municipal permit
-              assistance, accurate bid preparation, and project coordination.
+            <p className="text-sky-100/75 text-xs sm:text-sm leading-relaxed max-w-md">
+              Dependable plumbing services, architectural fixture sourcing, municipal permit pulling assistance, and contractor project support.
             </p>
 
-            <div className="pt-2 flex flex-col gap-2">
-              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">
-                Direct Contact Phone Line:
-              </span>
-              <div className="flex flex-col gap-1.5 text-xs sm:text-sm font-medium text-white">
-                <a
-                  href="tel:8324271674"
-                  className="hover:text-sky-300 transition-colors inline-flex items-center gap-2"
-                >
-                  <Phone className="w-4 h-4 text-sky-300" weight="fill" />
-                  <span>Carlos Ramos: (832) 427-1674</span>
-                </a>
-              </div>
+            <div className="pt-1">
+              <a
+                href="tel:8324271674"
+                className="hover:text-sky-300 transition-colors inline-flex items-center gap-2 text-sm font-semibold text-white"
+              >
+                <Phone className="w-4 h-4 text-sky-300" weight="fill" />
+                <span>Carlos Ramos: (832) 427-1674</span>
+              </a>
             </div>
           </div>
 
-          {/* Col 2: Navigation Links */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Col 2: Concise Links */}
+          <div className="md:col-span-3 space-y-3">
             <h4 className="text-xs font-semibold text-sky-300 uppercase tracking-wider">
-              Quick Links
+              Navigation
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-sky-100/80 font-normal">
+            <ul className="space-y-2 text-xs sm:text-sm text-sky-100/80 font-medium">
               <li>
                 <a
                   href="#home"
@@ -98,31 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Plumbing Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#why-us"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("#why-us");
-                  }}
-                  className="hover:text-white transition-colors"
-                >
-                  Why Choose Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#reviews"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("#reviews");
-                  }}
-                  className="hover:text-white transition-colors"
-                >
-                  Customer Reviews
+                  Core Services
                 </a>
               </li>
               <li>
@@ -134,34 +104,33 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Contact Us
+                  Contact &amp; Booking
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Services & CTA */}
-          <div className="lg:col-span-4 space-y-4">
+          {/* Col 3: Direct Appointment Trigger */}
+          <div className="md:col-span-3 space-y-3">
             <h4 className="text-xs font-semibold text-sky-300 uppercase tracking-wider">
-              Appointments &amp; Support
+              Appointments
             </h4>
             <p className="text-xs text-sky-100/75 leading-relaxed">
-              Ready to pull permits, source plumbing fixtures, or request a bid
-              for your project?
+              Book a consultation or request an itemized bid for your project.
             </p>
 
             <Button
               onClick={() => onOpenBooking()}
-              className="w-full bg-white hover:bg-slate-100 text-[#003c7a] font-semibold text-xs sm:text-sm h-11 rounded-full flex items-center justify-center gap-2 shadow-sm"
+              className="w-full bg-white hover:bg-slate-100 text-[#003c7a] font-semibold text-xs sm:text-sm h-10 rounded-full flex items-center justify-center gap-2 shadow-sm"
             >
               <CalendarCheck className="w-4 h-4 text-[#0060c0]" weight="bold" />
-              <span>Book an Appointment</span>
+              <span>Book Appointment</span>
             </Button>
           </div>
         </div>
 
-        {/* Bottom Legal & Copyright Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sky-200/60">
+        {/* Bottom Legal Bar */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sky-200/60">
           <p>
             &copy; {currentYear} I Know A Plumber. All rights reserved.
           </p>

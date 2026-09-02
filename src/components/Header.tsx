@@ -20,8 +20,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Why Us", href: "#why-us" },
-    { name: "Reviews", href: "#reviews" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact & Book", href: "#contact" },
   ];
 
   const handleNavClick = (href: string) => {
@@ -33,23 +32,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-100 shadow-sm transition-all duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 sm:h-22 flex items-center justify-between">
-        {/* Brand Logo */}
+    <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs transition-all duration-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-22 sm:h-24 md:h-26 flex items-center justify-between">
+        {/* Prominent Brand Logo */}
         <a
           href="#home"
           onClick={(e) => {
             e.preventDefault();
             handleNavClick("#home");
           }}
-          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl"
+          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-2xl py-1"
           aria-label="I Know A Plumber Home"
         >
           <Logo variant="navy" size="md" />
         </a>
 
         {/* Minimal Navigation */}
-        <nav className="hidden lg:flex items-center gap-8" aria-label="Main Navigation">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -58,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 e.preventDefault();
                 handleNavClick(link.href);
               }}
-              className="text-sm font-medium text-slate-600 hover:text-[#003c7a] transition-colors py-1 relative group"
+              className="text-sm font-semibold text-slate-600 hover:text-[#003c7a] transition-colors py-1 relative group"
             >
               <span>{link.name}</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0060c0] transition-all duration-200 group-hover:w-full" />
@@ -67,11 +66,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
         </nav>
 
         {/* Direct Contact Pill & CTA */}
-        <div className="hidden sm:flex items-center gap-3.5">
-          {/* Subtle Phone Pill */}
+        <div className="hidden sm:flex items-center gap-3">
           <a
             href="tel:8324271674"
-            className="flex items-center bg-blue-50/80 hover:bg-blue-100/70 border border-blue-200/70 rounded-full px-4 py-2 text-xs text-slate-800 transition-colors shadow-xs group"
+            className="flex items-center bg-blue-50/90 hover:bg-blue-100/80 border border-blue-200/80 rounded-full px-4 py-2 text-xs text-slate-800 transition-colors shadow-xs group"
             title="Call Carlos Ramos - (832) 427-1674"
           >
             <Phone className="w-3.5 h-3.5 text-[#0060c0] mr-2 shrink-0 group-hover:scale-110 transition-transform" weight="fill" />
@@ -81,19 +79,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
           <Button
             onClick={() => onOpenBooking()}
-            className="bg-[#003c7a] hover:bg-[#002f60] text-white font-medium px-4 py-2 text-xs sm:text-sm rounded-full shadow-sm flex items-center gap-2 transition-transform active:scale-[0.98]"
+            className="bg-[#003c7a] hover:bg-[#002f60] text-white font-medium px-5 py-2.5 text-xs sm:text-sm rounded-full shadow-sm flex items-center gap-2 transition-transform active:scale-[0.98]"
           >
             <CalendarCheck className="w-4 h-4 text-sky-300" weight="bold" />
-            <span>Book Appointment</span>
+            <span>Book Appt</span>
           </Button>
         </div>
 
         {/* Mobile Actions */}
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 md:hidden">
           <Button
             onClick={() => onOpenBooking()}
             size="sm"
-            className="bg-[#003c7a] hover:bg-[#002f60] text-white font-medium text-xs px-3.5 rounded-full sm:hidden"
+            className="bg-[#003c7a] hover:bg-[#002f60] text-white font-medium text-xs px-3.5 rounded-full"
           >
             Book
           </Button>
@@ -106,9 +104,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? (
-              <X className="w-5 h-5" weight="bold" />
+              <X className="w-6 h-6" weight="bold" />
             ) : (
-              <List className="w-5 h-5" weight="bold" />
+              <List className="w-6 h-6" weight="bold" />
             )}
           </button>
         </div>
@@ -116,7 +114,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-6 shadow-xl animate-in slide-in-from-top duration-200 text-left">
+        <div className="md:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-6 shadow-xl animate-in slide-in-from-top duration-200 text-left">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
@@ -134,13 +132,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             ))}
 
             <div className="pt-4 border-t border-slate-100 space-y-3">
-              <div className="bg-blue-50/60 p-3.5 rounded-xl border border-blue-100 space-y-2">
+              <div className="bg-blue-50/60 p-3.5 rounded-xl border border-blue-100 space-y-1">
                 <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block">
                   Direct Line
                 </span>
                 <a
                   href="tel:8324271674"
-                  className="flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#0060c0]"
+                  className="flex items-center justify-between text-sm font-bold text-slate-900 hover:text-[#0060c0]"
                 >
                   <span>Carlos Ramos</span>
                   <span className="text-[#0060c0]">(832) 427-1674</span>

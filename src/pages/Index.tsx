@@ -3,9 +3,6 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Services } from "@/components/Services";
-import { WhyChooseUs } from "@/components/WhyChooseUs";
-import { Reviews } from "@/components/Reviews";
-import { BookingSection } from "@/components/BookingSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { QuickCallBar } from "@/components/QuickCallBar";
@@ -26,33 +23,24 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-blue-500/20 selection:text-[#003c7a] pb-24 sm:pb-0">
-      {/* Primary Header with Dual Phone Contact Ribbon and Navigation */}
+      {/* Sleek Header with Prominently Sized Logo & Direct Call Pill */}
       <Header onOpenBooking={handleOpenBooking} />
 
       <main className="flex-1">
-        {/* Hero Section with Direct Phone CTAs & Trust Badges */}
+        {/* High-Impact Hero with Direct Call CTA & Core Badges */}
         <Hero onOpenBooking={handleOpenBooking} />
 
-        {/* About Carlos Ramos / Authentic Company Background */}
-        <About onOpenBooking={() => handleOpenBooking("General Consultation")} />
-
-        {/* 6 Clean Plumbing Services Cards */}
+        {/* 4 Core Plumbing & Contractor Services */}
         <Services onOpenBooking={handleOpenBooking} />
 
-        {/* Why Choose Us Credibility Highlights */}
-        <WhyChooseUs />
+        {/* Authentic Background & Key Highlights */}
+        <About onOpenBooking={() => handleOpenBooking("General Consultation")} />
 
-        {/* Real Customer Reviews & Feedback Structure */}
-        <Reviews />
-
-        {/* Dedicated Appointment Booking Section & Integration Bridge */}
-        <BookingSection onOpenBooking={handleOpenBooking} />
-
-        {/* Contact Section with Dual Phone Numbers & Simple Message Form */}
+        {/* Unified Contact & Instant Square Booking Section */}
         <ContactSection onOpenBooking={() => handleOpenBooking("Direct Inquiry")} />
       </main>
 
-      {/* Professional Footer */}
+      {/* Elegant Navy Footer with Large Logo */}
       <Footer onOpenBooking={handleOpenBooking} />
 
       {/* Mobile Sticky 1-Tap Call & Book Bar */}
