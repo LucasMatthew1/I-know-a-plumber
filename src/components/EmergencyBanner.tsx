@@ -31,217 +31,232 @@ interface EmergencyIssue {
 const emergencyIssues: EmergencyIssue[] = [
   {
     id: "burst-pipe",
-    title: "Burst Pipe or Major Water Leak",
+    title: "Burst Pipe / Major Leak",
     icon: Drop,
-    urgentGuidance: "Shut off your main water valve immediately. Keep electronics and valuables clear.",
-    smsMessage: "EMERGENCY: I have a burst pipe / major water leak needing urgent plumbing support.",
+    urgentGuidance: "Shut off your main water valve immediately. Keep valuables and electrical devices clear.",
+    smsMessage: "EMERGENCY: I have a burst pipe / major water leak needing urgent plumbing dispatch.",
   },
   {
     id: "water-heater",
-    title: "Water Heater Rupture / Gas Leak",
+    title: "Water Heater Breakdown",
     icon: Flame,
-    urgentGuidance: "Turn off water supply line to heater. If smelling gas, exit building and ventilate.",
-    smsMessage: "URGENT: Water heater breakdown/leak requires rapid plumbing dispatch.",
+    urgentGuidance: "Turn off the cold water shutoff valve above the tank. If smelling gas, vacate and ventilate.",
+    smsMessage: "URGENT: Water heater failure / leaking unit needing fast inspection.",
   },
   {
     id: "sewer-backup",
-    title: "Sewer Backup / Total Drain Clog",
+    title: "Sewer Backup / Total Clog",
     icon: WarningCircle,
-    urgentGuidance: "Avoid running any sinks, toilets, or dishwashers to prevent overflow.",
+    urgentGuidance: "Avoid running sinks, showers, or washing machines to prevent further interior overflow.",
     smsMessage: "EMERGENCY: Sewer line backup / drain emergency at my property.",
   },
   {
     id: "permit-stop",
-    title: "Urgent Permit Stop / Red Tag Issue",
+    title: "City Inspection / Red Tag",
     icon: FileText,
-    urgentGuidance: "Have your city inspection ticket ready. Carlos can review code violations promptly.",
-    smsMessage: "URGENT: Contractor job red-tagged / permit issue requiring immediate code resolution.",
+    urgentGuidance: "Keep your city inspection report handy. Carlos can quickly identify code violations and pull remedies.",
+    smsMessage: "URGENT: Job red-tagged / municipal plumbing permit issue requiring swift resolution.",
   },
 ];
 
 export const EmergencyBanner: React.FC<EmergencyBannerProps> = () => {
   const [selectedIssueId, setSelectedIssueId] = useState<string>("burst-pipe");
-  const [isExpanded, setIsExpanded] = useState<boolean>(true);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [copied, setCopied] = useState<boolean>(false);
   const [isDismissed, setIsDismissed] = useState<boolean>(false);
 
   const selectedIssue =
     emergencyIssues.find((issue) => issue.id === selectedIssueId) || emergencyIssues[0];
 
-  const handleCopyPhone = () => {
+  const handleCopyPhone = (e: React.MouseEvent) => {
+    e.stopPropagation();
     navigator.clipboard.writeText("8324271674");
     setCopied(true);
-    setTimeout(() => setCopied(false), 2200);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   if (isDismissed) {
-    return (
-      <div className="bg-amber-500/10 border-b border-amber-200/80 py-2 px-4 text-center">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm text-amber-900 font-medium">
-          <div className="flex items-center gap-2">
-            <span className="flex h-2 w-2 rounded-full bg-amber-600 animate-ping" />
-            <span>24/7 Priority Emergency Plumbing Available</span>
-          </div>
-          <button
-            onClick={() => setIsDismissed(false)}
-            className="text-amber-800 font-bold underline hover:text-amber-950 text-xs ml-3"
-          >
-            Show Emergency Panel
-          </button>
-        </div>
-      </div>
-    );
+    return null;
   }
 
   return (
-    <section aria-label="Emergency Plumbing Response" className="relative z-20 bg-gradient-to-r from-red-700 via-red-600 to-amber-700 text-white shadow-lg border-b border-red-800">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.12),transparent_60%)] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 sm:py-4 relative">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-          {/* Header & Status Indicator */}
-          <div className="flex items-start sm:items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="relative shrink-0 flex items-center justify-center w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white shadow-inner">
-                <WarningCircle weight="fill" className="w-6 h-6 animate-pulse text-amber-200" />
-                <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-300" />
-                </span>
-              </div>
-              <div>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-xs font-extrabold uppercase tracking-wider bg-black/25 px-2 py-0.5 rounded text-amber-300 border border-amber-300/30">
-                    Emergency Dispatch
-                  </span>
-                  <span className="text-xs text-red-100 flex items-center gap-1 font-medium">
-                    <Clock weight="bold" className="w-3.5 h-3.5 text-amber-300" />
-                    Priority Callback ~15 mins
-                  </span>
-                </div>
-                <h2 className="text-base sm:text-lg font-display font-extrabold tracking-tight text-white leading-tight">
-                  Plumbing Emergency or Job Site Halt?
-                </h2>
-              </div>
-            </div>
-
-            {/* Mobile Expand / Dismiss Controls */}
-            <div className="flex items-center gap-1.5 lg:hidden">
-              <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="p-1.5 rounded-lg bg-black/20 hover:bg-black/30 text-white text-xs flex items-center gap-1 font-medium transition"
-                aria-label={isExpanded ? "Collapse emergency panel" : "Expand emergency panel"}
-              >
-                {isExpanded ? <CaretUp weight="bold" className="w-4 h-4" /> : <CaretDown weight="bold" className="w-4 h-4" />}
-              </button>
-              <button
-                onClick={() => setIsDismissed(true)}
-                className="p-1.5 rounded-lg bg-black/20 hover:bg-black/30 text-white/80 hover:text-white transition"
-                aria-label="Dismiss banner"
-              >
-                <X weight="bold" className="w-4 h-4" />
-              </button>
+    <aside
+      aria-label="Emergency Plumbing Hotline"
+      className="relative z-20 bg-[#001f3f] text-white border-b border-blue-900/60 shadow-xs transition-colors"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Compact Single-Row Main Bar */}
+        <div className="py-2.5 sm:py-3 flex items-center justify-between gap-3 text-xs sm:text-sm">
+          {/* Left: Indicator & Headline */}
+          <div className="flex items-center gap-2.5 min-w-0">
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
+              <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-60" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400" />
+            </span>
+            
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-bold text-sky-200 tracking-wide text-xs uppercase bg-sky-950/80 px-2 py-0.5 rounded border border-sky-800/60">
+                24/7 Emergency Service
+              </span>
+              <span className="text-slate-200 font-medium truncate hidden md:inline">
+                Burst pipes, major leaks &amp; urgent permit stops • Rapid response across Greater Houston
+              </span>
             </div>
           </div>
 
-          {/* Quick Direct Actions */}
-          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-            {/* Direct Call Button */}
+          {/* Right: Actions & Expand Button */}
+          <div className="flex items-center gap-2 shrink-0">
+            {/* Quick Call Button */}
             <a
               href="tel:8324271674"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white text-red-700 font-bold text-sm shadow-md hover:bg-amber-50 active:scale-[0.98] transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#0060c0] hover:bg-[#0070e0] text-white font-semibold text-xs sm:text-sm transition-all shadow-xs hover:shadow-blue-500/20 active:scale-95"
             >
-              <PhoneCall weight="fill" className="w-4 h-4 text-red-600 animate-bounce" />
-              <span>Call Carlos: (832) 427-1674</span>
+              <PhoneCall weight="fill" className="w-3.5 h-3.5 text-sky-200" />
+              <span>(832) 427-1674</span>
             </a>
 
-            {/* Direct SMS with prefilled emergency issue */}
-            <a
-              href={`sms:8324271674?body=${encodeURIComponent(selectedIssue.smsMessage)}`}
-              className="inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-black/25 hover:bg-black/35 border border-white/20 text-white font-semibold text-sm transition active:scale-[0.98]"
-            >
-              <Chats weight="bold" className="w-4 h-4 text-amber-300" />
-              <span className="hidden sm:inline">Text Emergency</span>
-              <span className="sm:hidden">SMS</span>
-            </a>
-
-            {/* Copy Number Button */}
+            {/* Expand / Troubleshoot Toggle */}
             <button
-              onClick={handleCopyPhone}
-              className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-black/20 hover:bg-black/30 border border-white/15 text-white/90 text-xs font-semibold transition"
-              title="Copy phone number to clipboard"
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/15 text-sky-100 text-xs font-medium transition-colors border border-white/10"
+              title="Toggle emergency issue guidance"
+              aria-expanded={isExpanded}
             >
-              {copied ? (
-                <>
-                  <Check weight="bold" className="w-4 h-4 text-emerald-300" />
-                  <span className="text-emerald-300">Copied!</span>
-                </>
+              <span className="hidden sm:inline">
+                {isExpanded ? "Hide Guide" : "Emergency Guide"}
+              </span>
+              <span className="sm:hidden">Guide</span>
+              {isExpanded ? (
+                <CaretUp weight="bold" className="w-3 h-3 text-sky-300" />
               ) : (
-                <>
-                  <Copy weight="bold" className="w-4 h-4" />
-                  <span className="hidden sm:inline">Copy</span>
-                </>
+                <CaretDown weight="bold" className="w-3 h-3 text-sky-300" />
               )}
             </button>
 
-            {/* Desktop Dismiss */}
+            {/* Dismiss Button */}
             <button
               onClick={() => setIsDismissed(true)}
-              className="hidden lg:flex p-2 rounded-lg bg-black/15 hover:bg-black/25 text-white/70 hover:text-white transition ml-1"
-              title="Hide emergency banner"
+              className="p-1 rounded-md text-slate-400 hover:text-white hover:bg-white/10 transition-colors ml-1"
+              aria-label="Dismiss banner"
+              title="Dismiss banner"
             >
               <X weight="bold" className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        {/* Interactive Issue Selection & Immediate Guidance Panel */}
+        {/* Collapsible Emergency Guidance & Fast Action Panel */}
         <AnimatePresence>
           {isExpanded && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.25 }}
-              className="mt-3 pt-3 border-t border-white/15 overflow-hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="overflow-hidden border-t border-blue-900/80 pb-4 pt-3"
             >
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
-                {/* Issue Selection Pills */}
-                <div className="flex flex-wrap items-center gap-1.5">
-                  <span className="text-white/80 font-medium mr-1 hidden sm:inline">Select issue:</span>
+              <div className="bg-[#00172e] rounded-xl p-3.5 sm:p-4 border border-blue-800/40">
+                <div className="flex items-center justify-between mb-3 pb-2 border-b border-blue-900/60">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck weight="fill" className="w-4 h-4 text-cyan-400" />
+                    <span className="text-xs font-semibold text-slate-200 uppercase tracking-wider">
+                      Select Your Urgent Plumbing Issue:
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs text-sky-300 font-medium">
+                    <Clock weight="bold" className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>Avg. Response: ~15-30 mins</span>
+                  </div>
+                </div>
+
+                {/* 4 Interactive Issue Pills */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3.5">
                   {emergencyIssues.map((issue) => {
-                    const IconComponent = issue.icon;
-                    const isSelected = issue.id === selectedIssueId;
+                    const isSelected = selectedIssueId === issue.id;
+                    const Icon = issue.icon;
                     return (
                       <button
                         key={issue.id}
+                        type="button"
                         onClick={() => setSelectedIssueId(issue.id)}
-                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition ${
+                        className={`flex items-center gap-2 p-2 rounded-lg text-left text-xs transition-all border ${
                           isSelected
-                            ? "bg-white text-red-700 shadow-sm font-bold"
-                            : "bg-black/20 hover:bg-black/30 text-white/90"
+                            ? "bg-blue-600/30 border-cyan-400 text-white shadow-xs"
+                            : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white"
                         }`}
                       >
-                        <IconComponent weight={isSelected ? "fill" : "bold"} className="w-3.5 h-3.5" />
-                        <span>{issue.title.split(" or ")[0]}</span>
+                        <div
+                          className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 ${
+                            isSelected
+                              ? "bg-cyan-500/30 text-cyan-300"
+                              : "bg-white/10 text-slate-400"
+                          }`}
+                        >
+                          <Icon weight={isSelected ? "fill" : "regular"} className="w-3.5 h-3.5" />
+                        </div>
+                        <span className="font-semibold line-clamp-1">{issue.title}</span>
                       </button>
                     );
                   })}
                 </div>
 
-                {/* Instant Action Guidance */}
-                <div className="bg-black/25 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2 text-amber-100">
-                  <ShieldCheck weight="fill" className="w-4 h-4 shrink-0 text-amber-300" />
-                  <span className="truncate max-w-md">
-                    <strong className="text-white">Action:</strong> {selectedIssue.urgentGuidance}
-                  </span>
+                {/* Selected Issue Guidance & Rapid Dispatch Triggers */}
+                <div className="bg-[#001020] rounded-lg p-3 border border-blue-900/70 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-bold text-cyan-400">
+                        Immediate Action:
+                      </span>
+                      <span className="text-xs text-slate-200">
+                        {selectedIssue.urgentGuidance}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 shrink-0 w-full md:w-auto">
+                    <a
+                      href="tel:8324271674"
+                      className="flex-1 md:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md bg-[#0060c0] hover:bg-[#0070e0] text-white text-xs font-semibold transition-colors shadow-xs"
+                    >
+                      <PhoneCall weight="fill" className="w-3.5 h-3.5 text-cyan-200" />
+                      <span>Call Carlos</span>
+                    </a>
+
+                    <a
+                      href={`sms:8324271674?&body=${encodeURIComponent(
+                        selectedIssue.smsMessage
+                      )}`}
+                      className="flex-1 md:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md bg-white/10 hover:bg-white/20 text-sky-100 text-xs font-semibold transition-colors border border-white/10"
+                    >
+                      <Chats weight="fill" className="w-3.5 h-3.5 text-cyan-300" />
+                      <span>Text Details</span>
+                    </a>
+
+                    <button
+                      type="button"
+                      onClick={handleCopyPhone}
+                      className="inline-flex items-center justify-center gap-1 px-2.5 py-1.5 rounded-md bg-white/5 hover:bg-white/10 text-slate-300 text-xs transition-colors border border-white/10"
+                      title="Copy phone number"
+                    >
+                      {copied ? (
+                        <>
+                          <Check weight="bold" className="w-3.5 h-3.5 text-emerald-400" />
+                          <span className="text-emerald-300 text-xs">Copied</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5 text-slate-400" />
+                          <span className="hidden sm:inline text-xs">Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </section>
+    </aside>
   );
 };

@@ -93,7 +93,7 @@ export const Preloader: React.FC<PreloaderProps> = ({
         >
           {/* Ambient Glowing Background Elements */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#0060c0]/25 rounded-full blur-[110px] animate-pulse" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#0060c0]/25 rounded-full blur-[110px] motion-safe:animate-pulse" />
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#003c7a]/40 rounded-full blur-[90px]" />
             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-sky-500/20 rounded-full blur-[90px]" />
           </div>
@@ -153,7 +153,7 @@ export const Preloader: React.FC<PreloaderProps> = ({
               <h2 className="text-xl sm:text-2xl font-display font-bold tracking-tight text-white flex items-center justify-center gap-2">
                 <span>I Know A Plumber</span>
                 <span className="inline-flex text-sky-400">
-                  <Drop weight="fill" className="w-5 h-5 animate-bounce" />
+                  <Drop weight="fill" className="w-5 h-5 motion-safe:animate-bounce" />
                 </span>
               </h2>
               <p className="text-xs sm:text-sm text-sky-200/80 font-medium">
@@ -176,7 +176,7 @@ export const Preloader: React.FC<PreloaderProps> = ({
                 {progress >= 100 ? (
                   <CheckCircle weight="fill" className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                 ) : (
-                  <Wrench weight="duotone" className="w-3.5 h-3.5 text-sky-400 animate-spin shrink-0" />
+                  <Wrench weight="duotone" className="w-3.5 h-3.5 text-sky-400 motion-safe:animate-spin shrink-0" />
                 )}
                 <span className="truncate">{statusText}</span>
               </span>
