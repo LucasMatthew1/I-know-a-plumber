@@ -32,7 +32,11 @@
     {
       "at": 1788379350322,
       "title": "Removed hero eyebrow badge"
+    },
+    {
+      "at": 1788379593355,
+      "title": "Added animated branded preloader"
     }
   ],
-  "updatedAt": 1788379350322
+  "updatedAt": 1788379593355
 }

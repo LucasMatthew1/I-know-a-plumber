@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Preloader } from "@/components/Preloader";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -23,6 +24,9 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-blue-500/20 selection:text-[#003c7a] pb-24 sm:pb-0">
+      {/* Brand Preloader Animation */}
+      <Preloader />
+
       {/* Sleek Header with Prominently Sized Logo & Direct Call Pill */}
       <Header onOpenBooking={handleOpenBooking} />
 
