@@ -74,19 +74,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             </div>
 
             {/* Minimalist Feature Pillars */}
-            <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm text-slate-600 font-medium">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#0060c0] shrink-0" weight="fill" />
+            <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center gap-3 text-xs text-slate-700 font-medium">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-full">
+                <CheckCircle className="w-3.5 h-3.5 text-[#0060c0] shrink-0" weight="fill" />
                 <span>Plumbing Fixtures</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#0060c0] shrink-0" weight="fill" />
-                <span>Permit Pulling Assistance</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#0060c0] shrink-0" weight="fill" />
-                <span>Itemized Bids &amp; Estimates</span>
-              </div>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-full">
+                <CheckCircle className="w-3.5 h-3.5 text-[#0060c0] shrink-0" weight="fill" />
+                <span>Permit Pulling</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-full">
+                <CheckCircle className="w-3.5 h-3.5 text-[#0060c0] shrink-0" weight="fill" />
+                <span>Bids &amp; Estimates</span>
+              </span>
             </div>
           </div>
 

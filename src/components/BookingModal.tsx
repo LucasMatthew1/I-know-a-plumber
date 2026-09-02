@@ -17,8 +17,10 @@ import {
   Clock,
   User,
   EnvelopeSimple,
-  Wrench,
+  ArrowSquareOut,
+  CreditCard,
 } from "@phosphor-icons/react";
+import { SQUARE_BOOKING_URL, BOOKING_CONFIG } from "@/config/booking";
 
 interface BookingModalProps {
   open: boolean;
@@ -68,23 +70,59 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[520px] p-0 overflow-hidden border-slate-200 rounded-3xl">
+      <DialogContent className="sm:max-w-[540px] p-0 overflow-hidden border-slate-200 rounded-3xl">
+        {/* Header */}
         <div className="bg-[#003c7a] p-6 text-white text-left">
-          <div className="flex items-center gap-2 text-sky-300 text-xs font-semibold mb-1">
-            <CalendarCheck className="w-4 h-4" weight="bold" />
-            <span>I Know A Plumber</span>
+          <div className="flex items-center justify-between gap-2 mb-1">
+            <div className="flex items-center gap-2 text-sky-300 text-xs font-semibold">
+              <CalendarCheck className="w-4 h-4" weight="bold" />
+              <span>I Know A Plumber</span>
+            </div>
+            <span className="inline-flex items-center gap-1 text-xs font-semibold bg-white/15 px-2.5 py-0.5 rounded-full text-white border border-white/20">
+              <CreditCard className="w-3 h-3 text-sky-300" />
+              <span>Square Powered</span>
+            </span>
           </div>
           <DialogTitle className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             Schedule an Appointment
           </DialogTitle>
           <DialogDescription className="text-sky-100/80 text-xs sm:text-sm mt-1">
-            Select your service needs or consultation time. Carlos or Monica Ramos will confirm promptly.
+            Book online instantly via Square, or submit a request directly to Carlos and Monica Ramos.
           </DialogDescription>
         </div>
 
-        <div className="p-6 pt-4 text-left">
+        <div className="p-6 pt-5 text-left space-y-5">
+          {/* Direct Square Instant Booking Banner */}
+          <div className="bg-blue-50/70 border border-blue-200/80 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="space-y-0.5">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-[#003c7a]">
+                <span>Instant Online Scheduling</span>
+              </div>
+              <p className="text-xs text-slate-600">
+                Book and manage appointments directly on our Square portal.
+              </p>
+            </div>
+            <a
+              href={SQUARE_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-[#0060c0] hover:bg-[#0050a0] text-white text-xs font-bold rounded-full shadow-sm transition-all active:scale-[0.98] shrink-0 w-full sm:w-auto"
+            >
+              <span>Book on Square</span>
+              <ArrowSquareOut className="w-3.5 h-3.5" weight="bold" />
+            </a>
+          </div>
+
+          <div className="relative flex py-1 items-center">
+            <div className="flex-grow border-t border-slate-200"></div>
+            <span className="flex-shrink mx-3 text-xs uppercase tracking-wider text-slate-500 font-semibold">
+              Or Send A Quick Booking Request
+            </span>
+            <div className="flex-grow border-t border-slate-200"></div>
+          </div>
+
           {submitted ? (
-            <div className="py-6 text-center space-y-3">
+            <div className="py-6 text-center space-y-4">
               <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                 <CheckCircle className="w-7 h-7" weight="fill" />
               </div>
@@ -155,24 +193,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     className="w-full h-10 px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
                     required
                   >
-                    <option value="Plumbing Fixtures Sourcing & Installation">
-                      Plumbing Fixtures (Sinks, Faucets, Showers, Toilets)
-                    </option>
-                    <option value="Permit Pulling Assistance">
-                      Permit Pulling & City Filing Assistance
-                    </option>
-                    <option value="Bid Preparation & Estimating">
-                      Bid Preparation & Project Estimating
-                    </option>
-                    <option value="Plumbing Project Support & Contractor Coordination">
-                      Plumbing Project Support & GC Coordination
-                    </option>
-                    <option value="Plan Review & Fixture Schedules">
-                      Plan Review & Fixture Schedule Consultation
-                    </option>
-                    <option value="Plumbing Troubleshooting & Consultation">
-                      Plumbing Consultation / On-Site Inspection
-                    </option>
+                    {BOOKING_CONFIG.popularServices.map((srv, idx) => (
+                      <option key={idx} value={srv}>
+                        {srv}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -336,7 +361,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   className="w-full h-11 bg-[#003c7a] hover:bg-[#002f60] text-white font-medium text-xs sm:text-sm rounded-full shadow-sm"
                 >
                   <CalendarCheck className="w-4 h-4 mr-2 text-sky-300" weight="bold" />
-                  Confirm Appointment Request
+                  Submit Booking Request
                 </Button>
               </div>
 

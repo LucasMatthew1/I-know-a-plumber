@@ -78,7 +78,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             >
               (832) 427-1674
             </a>
-            <span className="mx-2 text-slate-400">•</span>
+            <span className="mx-2 text-slate-500">•</span>
             <a
               href="tel:8327459284"
               className="font-semibold text-slate-800 hover:text-[#0060c0] transition-colors"

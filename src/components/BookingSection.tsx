@@ -5,7 +5,10 @@ import {
   Phone,
   CheckCircle,
   ArrowRight,
+  ArrowSquareOut,
+  CreditCard,
 } from "@phosphor-icons/react";
+import { SQUARE_BOOKING_URL, BOOKING_CONFIG } from "@/config/booking";
 
 interface BookingSectionProps {
   onOpenBooking: (service?: string) => void;
@@ -25,7 +28,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
           <div className="lg:col-span-6 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-sky-200 text-xs font-medium">
               <CalendarCheck className="w-4 h-4 text-sky-300" weight="bold" />
-              <span>Appointment Scheduling</span>
+              <span>Square Appointments</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight leading-tight">
@@ -33,9 +36,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             </h2>
 
             <p className="text-sky-100/85 text-sm sm:text-base leading-relaxed font-normal">
-              Book a convenient time with <strong>I Know A Plumber</strong> to discuss your plumbing fixtures, city
-              permit assistance, bid preparation, or on-site support. Carlos or
-              Monica Ramos will confirm your request promptly.
+              Book a convenient time with <strong>I Know A Plumber</strong> directly through our Square online booking system, or submit a request to Carlos and Monica Ramos.
             </p>
 
             <div className="space-y-3 pt-2">
@@ -45,8 +46,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                   weight="fill"
                 />
                 <span>
-                  <strong>Flexible Scheduling:</strong> Morning and afternoon
-                  consultation windows available.
+                  <strong>Square Online Scheduling:</strong> Real-time calendar availability and instant appointment confirmation.
                 </span>
               </div>
 
@@ -56,8 +56,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                   weight="fill"
                 />
                 <span>
-                  <strong>Direct Owner Response:</strong> Carlos or Monica Ramos
-                  will personally follow up.
+                  <strong>Direct Owner Response:</strong> Carlos or Monica Ramos will personally confirm project details.
                 </span>
               </div>
 
@@ -67,8 +66,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                   weight="fill"
                 />
                 <span>
-                  <strong>Integration Ready:</strong> Easily connected to your
-                  existing appointment calendar.
+                  <strong>Flexible Consultation Windows:</strong> Morning, afternoon, and on-site scheduling available.
                 </span>
               </div>
             </div>
@@ -103,11 +101,16 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             <div className="bg-white rounded-3xl p-7 sm:p-9 text-slate-900 shadow-2xl border border-slate-100 text-left">
               <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-[#003c7a]">
-                    Select Your Service
-                  </h3>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#003c7a]">
+                      Book Appointment
+                    </h3>
+                    <span className="px-2 py-0.5 bg-blue-50 text-[#0060c0] text-xs font-bold rounded-full border border-blue-100">
+                      Square Online
+                    </span>
+                  </div>
                   <p className="text-xs text-slate-500 mt-0.5">
-                    Fast 1-minute scheduling request
+                    Choose a service or launch our Square calendar
                   </p>
                 </div>
                 <div className="w-9 h-9 rounded-full bg-blue-50 text-[#0060c0] flex items-center justify-center">
@@ -118,12 +121,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
               {/* Service Selection pills */}
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {[
-                    "Plumbing Fixtures Sourcing",
-                    "Permit Pulling Assistance",
-                    "Bid Preparation & Estimates",
-                    "Project Support & Coordination",
-                  ].map((serviceName, idx) => (
+                  {BOOKING_CONFIG.popularServices.slice(0, 4).map((serviceName, idx) => (
                     <button
                       key={idx}
                       type="button"
@@ -140,19 +138,26 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                 </div>
 
                 <div className="pt-3 space-y-3">
+                  {/* Square Primary Action */}
+                  <a
+                    href={SQUARE_BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full h-12 bg-[#0060c0] hover:bg-[#0050a0] text-white font-bold text-xs sm:text-sm rounded-full flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98]"
+                  >
+                    <span>Book Instantly on Square</span>
+                    <ArrowSquareOut className="w-4 h-4" weight="bold" />
+                  </a>
+
+                  {/* In-app scheduler trigger */}
                   <Button
                     onClick={() => onOpenBooking()}
-                    className="w-full h-11 bg-[#003c7a] hover:bg-[#002f60] text-white font-medium text-xs sm:text-sm rounded-full flex items-center justify-center gap-2 shadow-sm"
+                    variant="outline"
+                    className="w-full h-11 border-slate-200 text-slate-700 hover:bg-slate-50 font-semibold text-xs sm:text-sm rounded-full flex items-center justify-center gap-2"
                   >
-                    <CalendarCheck className="w-4 h-4 text-sky-300" weight="bold" />
-                    <span>Open Appointment Scheduler</span>
+                    <CalendarCheck className="w-4 h-4 text-[#0060c0]" weight="bold" />
+                    <span>Open Request Form</span>
                   </Button>
-
-                  <div className="p-3 bg-slate-50 rounded-xl border border-slate-200/70 text-center">
-                    <p className="text-xs text-slate-500">
-                      Direct integration ready for external booking calendars.
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
