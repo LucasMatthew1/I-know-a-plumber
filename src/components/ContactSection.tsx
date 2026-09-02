@@ -39,7 +39,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Left Column: Direct Phone Numbers & Information */}
+          {/* Left Column: Direct Phone Number & Information */}
           <div className="lg:col-span-5 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/70 border border-blue-100 text-[#003c7a] text-xs font-semibold">
               <Phone className="w-4 h-4 text-[#0060c0]" weight="bold" />
@@ -52,19 +52,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               We are ready to assist with your plumbing fixtures, permit pulling,
-              project estimates, and service inquiries. Reach out to Carlos or
-              Monica Ramos at <strong>I Know A Plumber</strong> directly by phone or submit the contact form.
+              project estimates, and service inquiries. Reach out to Carlos Ramos at <strong>I Know A Plumber</strong> directly by phone or submit the contact form.
             </p>
 
-            {/* Direct Phone Cards */}
+            {/* Direct Phone Card */}
             <div className="space-y-3 pt-2">
-              <div className="p-4 rounded-2xl bg-blue-50/40 border border-blue-100 hover:border-blue-200 transition-colors">
+              <div className="p-5 rounded-2xl bg-blue-50/60 border border-blue-100 hover:border-blue-200 transition-colors shadow-xs">
                 <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
-                  Primary Contact / Project Inquiries
+                  Direct Line &amp; Project Inquiries
                 </span>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mt-1">
                   <div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">
+                    <h4 className="text-base font-bold text-slate-900">
                       Carlos Ramos
                     </h4>
                     <p className="text-xs text-slate-500">
@@ -73,33 +72,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                   <a
                     href="tel:8324271674"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#003c7a] text-white hover:bg-[#002f60] font-medium text-xs transition-colors shadow-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#003c7a] text-white hover:bg-[#002f60] font-bold text-xs sm:text-sm transition-colors shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5 text-sky-300" weight="fill" />
+                    <Phone className="w-4 h-4 text-sky-300" weight="fill" />
                     <span>(832) 427-1674</span>
-                  </a>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-blue-50/40 border border-blue-100 hover:border-blue-200 transition-colors">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
-                  Secondary Line / Scheduling &amp; Coordination
-                </span>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">
-                      Monica Ramos
-                    </h4>
-                    <p className="text-xs text-slate-500">
-                      Customer Coordination &amp; Administration
-                    </p>
-                  </div>
-                  <a
-                    href="tel:8327459284"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#003c7a] text-white hover:bg-[#002f60] font-medium text-xs transition-colors shadow-sm"
-                  >
-                    <Phone className="w-3.5 h-3.5 text-sky-300" weight="fill" />
-                    <span>(832) 745-9284</span>
                   </a>
                 </div>
               </div>
@@ -124,7 +100,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 Send a Message
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6">
-                Fill out the fields below and Carlos or Monica Ramos will get back to you promptly.
+                Fill out the fields below and Carlos Ramos will get back to you promptly.
               </p>
 
               {formSubmitted ? (

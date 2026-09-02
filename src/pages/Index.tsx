@@ -33,7 +33,7 @@ const Index: React.FC = () => {
         {/* Hero Section with Direct Phone CTAs & Trust Badges */}
         <Hero onOpenBooking={handleOpenBooking} />
 
-        {/* About Carlos & Monica Ramos / Authentic Company Background */}
+        {/* About Carlos Ramos / Authentic Company Background */}
         <About onOpenBooking={() => handleOpenBooking("General Consultation")} />
 
         {/* 6 Clean Plumbing Services Cards */}

@@ -34,7 +34,7 @@ export const WhyChooseUs: React.FC = () => {
       icon: ChatCircleText,
       title: "Direct Owner Communication",
       description:
-        "Speak directly with Carlos and Monica Ramos. No unreturned messages, hidden fees, or confusing runarounds.",
+        "Speak directly with Carlos Ramos. No unreturned messages, hidden fees, or confusing runarounds.",
     },
     {
       icon: FileText,
@@ -102,21 +102,13 @@ export const WhyChooseUs: React.FC = () => {
               Ready to discuss an upcoming plumbing bid or permit filing?
             </p>
           </div>
-          <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#003c7a]">
-            <a
-              href="tel:8324271674"
-              className="hover:text-[#0060c0] transition-colors inline-flex items-center gap-1.5"
-            >
-              <span>Carlos: (832) 427-1674</span>
-            </a>
-            <span className="text-slate-500">•</span>
-            <a
-              href="tel:8327459284"
-              className="hover:text-[#0060c0] transition-colors inline-flex items-center gap-1.5"
-            >
-              <span>Monica: (832) 745-9284</span>
-            </a>
-          </div>
+          <a
+            href="tel:8324271674"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#003c7a] hover:text-[#0060c0] bg-blue-50/80 px-4 py-2 rounded-full border border-blue-100 transition-colors"
+          >
+            <Phone className="w-3.5 h-3.5 text-[#0060c0]" weight="fill" />
+            <span>Call Carlos: (832) 427-1674</span>
+          </a>
         </div>
       </div>
     </section>

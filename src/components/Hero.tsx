@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             {/* Subtle Eyebrow Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/70 border border-blue-100 text-[#003c7a] text-xs font-semibold">
               <span className="flex h-2 w-2 rounded-full bg-[#0060c0] motion-safe:animate-pulse" />
-              <span>I Know A Plumber • Carlos &amp; Monica Ramos</span>
+              <span>I Know A Plumber • Carlos Ramos</span>
             </div>
 
             {/* Display Headline */}
@@ -37,12 +37,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             {/* Supporting Copy */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl font-normal">
               Need reliable plumbing work done right? At <strong>I Know A Plumber</strong>,
-              we provide dependable plumbing fixtures sourcing, municipal permit pulling assistance,
+              Carlos Ramos provides dependable plumbing fixtures sourcing, municipal permit pulling assistance,
               accurate bid preparation, and practical on-site contractor coordination.
             </p>
 
             {/* Primary & Secondary Action CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
               <Button
                 onClick={() => onOpenBooking()}
                 size="lg"
@@ -52,25 +52,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 <span>Book an Appointment</span>
               </Button>
 
-              <div className="flex items-center gap-2">
-                <a
-                  href="tel:8324271674"
-                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 h-12 px-5 text-sm font-semibold text-slate-800 bg-blue-50/50 hover:bg-blue-50 border border-blue-100 rounded-full transition-colors"
-                  title="Call Carlos Ramos"
-                >
-                  <Phone className="w-4 h-4 text-[#0060c0]" weight="fill" />
-                  <span>(832) 427-1674</span>
-                </a>
-
-                <a
-                  href="tel:8327459284"
-                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 h-12 px-5 text-sm font-semibold text-slate-800 bg-blue-50/50 hover:bg-blue-50 border border-blue-100 rounded-full transition-colors"
-                  title="Call Monica Ramos"
-                >
-                  <Phone className="w-4 h-4 text-[#0060c0]" weight="fill" />
-                  <span>(832) 745-9284</span>
-                </a>
-              </div>
+              <a
+                href="tel:8324271674"
+                className="inline-flex items-center justify-center gap-2 h-12 px-6 text-sm font-semibold text-slate-800 bg-blue-50/70 hover:bg-blue-100/80 border border-blue-200/80 rounded-full transition-colors group"
+                title="Call Carlos Ramos - (832) 427-1674"
+              >
+                <Phone className="w-4 h-4 text-[#0060c0] group-hover:scale-110 transition-transform" weight="fill" />
+                <span>Call (832) 427-1674</span>
+              </a>
             </div>
 
             {/* Minimalist Feature Pillars */}
@@ -110,7 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                       I Know A Plumber
                     </span>
                     <h3 className="text-sm font-bold text-slate-900 mt-0.5">
-                      Carlos &amp; Monica Ramos
+                      Carlos Ramos
                     </h3>
                     <p className="text-xs text-slate-500">
                       Residential &amp; Commercial Plumbing Support

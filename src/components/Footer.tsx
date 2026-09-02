@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
             <div className="pt-2 flex flex-col gap-2">
               <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">
-                Direct Contact Phone Lines:
+                Direct Contact Phone Line:
               </span>
               <div className="flex flex-col gap-1.5 text-xs sm:text-sm font-medium text-white">
                 <a
@@ -54,13 +54,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 >
                   <Phone className="w-4 h-4 text-sky-300" weight="fill" />
                   <span>Carlos Ramos: (832) 427-1674</span>
-                </a>
-                <a
-                  href="tel:8327459284"
-                  className="hover:text-sky-300 transition-colors inline-flex items-center gap-2"
-                >
-                  <Phone className="w-4 h-4 text-sky-300" weight="fill" />
-                  <span>Monica Ramos: (832) 745-9284</span>
                 </a>
               </div>
             </div>
@@ -93,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  About Carlos &amp; Monica
+                  About Carlos Ramos
                 </a>
               </li>
               <li>
@@ -234,8 +227,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 </p>
                 <p>
                   For immediate service questions or appointment updates, please
-                  contact Carlos Ramos at (832) 427-1674 or Monica Ramos at (832)
-                  745-9284.
+                  contact Carlos Ramos at (832) 427-1674.
                 </p>
               </>
             )}

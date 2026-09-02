@@ -94,7 +94,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
 
             <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
               <p>
-                At <strong>I Know A Plumber</strong>, Carlos and Monica Ramos help property
+                At <strong>I Know A Plumber</strong>, Carlos Ramos helps property
                 owners, general contractors, and remodelers navigate their
                 plumbing needs with clarity, speed, and dependability.
               </p>
@@ -106,7 +106,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
               <p>
                 Whether you need help selecting the right fixtures for a
                 renovation, organizing city filings, or calculating a
-                cost-effective bid for an upcoming build, we provide honest,
+                cost-effective bid for an upcoming build, Carlos provides honest,
                 direct service every step of the way.
               </p>
             </div>
@@ -123,7 +123,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
                     Direct Point of Contact
                   </h4>
                   <p className="text-xs text-slate-500 mt-0.5">
-                    Speak directly with Carlos or Monica Ramos on every job.
+                    Speak directly with Carlos Ramos on every job.
                   </p>
                 </div>
               </div>

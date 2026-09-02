@@ -34,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-100 shadow-sm transition-all duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 sm:h-22 flex items-center justify-between">
         {/* Brand Logo */}
         <a
           href="#home"
@@ -42,7 +42,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             e.preventDefault();
             handleNavClick("#home");
           }}
-          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
+          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl"
           aria-label="I Know A Plumber Home"
         >
           <Logo variant="navy" size="md" />
@@ -66,27 +66,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           ))}
         </nav>
 
-        {/* Direct Contact Pills & CTA */}
-        <div className="hidden sm:flex items-center gap-3">
-          {/* Subtle Phone Pills */}
-          <div className="flex items-center bg-blue-50/70 border border-blue-100 rounded-full px-3.5 py-1.5 text-xs text-slate-700">
-            <Phone className="w-3.5 h-3.5 text-[#0060c0] mr-1.5 shrink-0" weight="fill" />
-            <a
-              href="tel:8324271674"
-              className="font-semibold text-slate-800 hover:text-[#0060c0] transition-colors"
-              title="Call Carlos Ramos"
-            >
-              (832) 427-1674
-            </a>
-            <span className="mx-2 text-slate-500">•</span>
-            <a
-              href="tel:8327459284"
-              className="font-semibold text-slate-800 hover:text-[#0060c0] transition-colors"
-              title="Call Monica Ramos"
-            >
-              (832) 745-9284
-            </a>
-          </div>
+        {/* Direct Contact Pill & CTA */}
+        <div className="hidden sm:flex items-center gap-3.5">
+          {/* Subtle Phone Pill */}
+          <a
+            href="tel:8324271674"
+            className="flex items-center bg-blue-50/80 hover:bg-blue-100/70 border border-blue-200/70 rounded-full px-4 py-2 text-xs text-slate-800 transition-colors shadow-xs group"
+            title="Call Carlos Ramos - (832) 427-1674"
+          >
+            <Phone className="w-3.5 h-3.5 text-[#0060c0] mr-2 shrink-0 group-hover:scale-110 transition-transform" weight="fill" />
+            <span className="text-slate-700 mr-1.5 font-medium">Call Carlos:</span>
+            <span className="font-bold text-[#003c7a]">(832) 427-1674</span>
+          </a>
 
           <Button
             onClick={() => onOpenBooking()}
@@ -145,24 +136,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             <div className="pt-4 border-t border-slate-100 space-y-3">
               <div className="bg-blue-50/60 p-3.5 rounded-xl border border-blue-100 space-y-2">
                 <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block">
-                  Direct Phone Lines
+                  Direct Line
                 </span>
-                <div className="flex flex-col gap-1.5 text-xs font-bold text-slate-800">
-                  <a
-                    href="tel:8324271674"
-                    className="flex items-center justify-between hover:text-[#0060c0]"
-                  >
-                    <span>Carlos Ramos</span>
-                    <span className="text-[#0060c0]">(832) 427-1674</span>
-                  </a>
-                  <a
-                    href="tel:8327459284"
-                    className="flex items-center justify-between hover:text-[#0060c0]"
-                  >
-                    <span>Monica Ramos</span>
-                    <span className="text-[#0060c0]">(832) 745-9284</span>
-                  </a>
-                </div>
+                <a
+                  href="tel:8324271674"
+                  className="flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#0060c0]"
+                >
+                  <span>Carlos Ramos</span>
+                  <span className="text-[#0060c0]">(832) 427-1674</span>
+                </a>
               </div>
 
               <Button

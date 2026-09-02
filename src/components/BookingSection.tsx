@@ -36,7 +36,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             </h2>
 
             <p className="text-sky-100/85 text-sm sm:text-base leading-relaxed font-normal">
-              Book a convenient time with <strong>I Know A Plumber</strong> directly through our Square online booking system, or submit a request to Carlos and Monica Ramos.
+              Book a convenient time with <strong>I Know A Plumber</strong> directly through our Square online booking system, or submit a request to Carlos Ramos.
             </p>
 
             <div className="space-y-3 pt-2">
@@ -56,7 +56,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                   weight="fill"
                 />
                 <span>
-                  <strong>Direct Owner Response:</strong> Carlos or Monica Ramos will personally confirm project details.
+                  <strong>Direct Owner Response:</strong> Carlos Ramos will personally confirm project details.
                 </span>
               </div>
 
@@ -74,23 +74,15 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             {/* Direct Phone Callout */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15 space-y-2">
               <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider block">
-                Direct Contact Lines
+                Direct Contact Line
               </span>
               <div className="flex flex-wrap gap-4 pt-1">
                 <a
                   href="tel:8324271674"
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white hover:text-sky-300 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-sky-300 transition-colors"
                 >
                   <Phone className="w-4 h-4 text-sky-300" weight="fill" />
-                  <span>Carlos: (832) 427-1674</span>
-                </a>
-                <span className="text-white/30 hidden sm:inline">•</span>
-                <a
-                  href="tel:8327459284"
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white hover:text-sky-300 transition-colors"
-                >
-                  <Phone className="w-4 h-4 text-sky-300" weight="fill" />
-                  <span>Monica: (832) 745-9284</span>
+                  <span>Carlos Ramos: (832) 427-1674</span>
                 </a>
               </div>
             </div>

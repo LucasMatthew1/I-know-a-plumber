@@ -86,7 +86,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             Schedule an Appointment
           </DialogTitle>
           <DialogDescription className="text-sky-100/80 text-xs sm:text-sm mt-1">
-            Book online instantly via Square, or submit a request directly to Carlos and Monica Ramos.
+            Book online instantly via Square, or submit a request directly to Carlos Ramos.
           </DialogDescription>
         </div>
 
@@ -373,13 +373,6 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     className="font-bold text-[#003c7a] hover:underline"
                   >
                     (832) 427-1674
-                  </a>{" "}
-                  or Monica:{" "}
-                  <a
-                    href="tel:8327459284"
-                    className="font-bold text-[#003c7a] hover:underline"
-                  >
-                    (832) 745-9284
                   </a>
                 </p>
               </div>

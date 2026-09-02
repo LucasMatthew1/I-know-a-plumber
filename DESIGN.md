@@ -20,4 +20,4 @@
 ## 4. Logo & Identity
 - **Official Brand Mark:** `/assets/i-know-a-plumber-logo.png` (featured in header, footer, and brand points).
 - **Wordmark:** "I KNOW A PLUMBER" & "Plumbing & Project Support".
-- **Contacts:** Carlos Ramos: (832) 427-1674 | Monica Ramos: (832) 745-9284.
+- **Contacts:** Carlos Ramos: (832) 427-1674.

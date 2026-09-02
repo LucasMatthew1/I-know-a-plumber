@@ -167,7 +167,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
               Need a Custom Plumbing Bid or Permit Assistance?
             </h3>
             <p className="text-xs sm:text-sm text-slate-600">
-              Reach out directly to Carlos or Monica Ramos to review your project
+              Reach out directly to Carlos Ramos to review your project
               scope and schedule a consultation.
             </p>
           </div>

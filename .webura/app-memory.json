@@ -20,7 +20,11 @@
     {
       "at": 1788370104041,
       "title": "Fixed scrolling on modal dialogs"
+    },
+    {
+      "at": 1788377402022,
+      "title": "Enlarged logo and removed Monica references"
     }
   ],
-  "updatedAt": 1788370104041
+  "updatedAt": 1788377402022
 }

@@ -26,7 +26,7 @@ export const Reviews: React.FC = () => {
       projectType: "Bathroom Fixtures & Sinks",
       rating: 5,
       comment:
-        "Carlos and Monica were very communicative from start to finish. They helped us source all the plumbing fixtures for our two bathrooms and coordinated everything smoothly. Straightforward pricing with no surprises.",
+        "Carlos was very communicative from start to finish. He helped us source all the plumbing fixtures for our two bathrooms and coordinated everything smoothly. Straightforward pricing with no surprises.",
     },
     {
       id: 2,
@@ -168,7 +168,7 @@ export const Reviews: React.FC = () => {
 
         <div className="mt-8 text-center">
           <p className="text-xs text-slate-500">
-            Have you worked with Carlos or Monica Ramos? We welcome your honest feedback.
+            Have you worked with Carlos Ramos? We welcome your honest feedback.
           </p>
         </div>
       </div>
@@ -181,7 +181,7 @@ export const Reviews: React.FC = () => {
               Share Your Experience
             </DialogTitle>
             <DialogDescription className="text-xs sm:text-sm text-slate-600">
-              Let Carlos and Monica Ramos know how your plumbing service or
+              Let Carlos Ramos know how your plumbing service or
               project went.
             </DialogDescription>
           </DialogHeader>

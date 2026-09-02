@@ -12,8 +12,6 @@ export const BOOKING_CONFIG = {
   phoneNumbers: {
     carlos: "(832) 427-1674",
     carlosTel: "tel:8324271674",
-    monica: "(832) 745-9284",
-    monicaTel: "tel:8327459284",
   },
   popularServices: [
     "Plumbing Fixtures Sourcing & Installation",
