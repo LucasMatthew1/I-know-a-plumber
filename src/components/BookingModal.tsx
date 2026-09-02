@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
@@ -70,16 +69,16 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[540px] p-0 overflow-hidden border-slate-200 rounded-3xl">
-        {/* Header */}
-        <div className="bg-[#003c7a] p-6 text-white text-left">
-          <div className="flex items-center justify-between gap-2 mb-1">
+      <DialogContent className="sm:max-w-[560px] p-0 border-slate-200 rounded-3xl max-h-[90dvh] flex flex-col overflow-hidden shadow-2xl bg-white">
+        {/* Pinned Header */}
+        <div className="bg-[#003c7a] p-5 sm:p-6 pr-14 text-white text-left shrink-0">
+          <div className="flex items-center justify-between gap-2 mb-1.5">
             <div className="flex items-center gap-2 text-sky-300 text-xs font-semibold">
               <CalendarCheck className="w-4 h-4" weight="bold" />
               <span>I Know A Plumber</span>
             </div>
             <span className="inline-flex items-center gap-1 text-xs font-semibold bg-white/15 px-2.5 py-0.5 rounded-full text-white border border-white/20">
-              <CreditCard className="w-3 h-3 text-sky-300" />
+              <CreditCard className="w-3.5 h-3.5 text-sky-300" />
               <span>Square Powered</span>
             </span>
           </div>
@@ -91,7 +90,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           </DialogDescription>
         </div>
 
-        <div className="p-6 pt-5 text-left space-y-5">
+        {/* Scrollable Body Container */}
+        <div className="p-5 sm:p-6 text-left space-y-5 overflow-y-auto flex-1 overscroll-contain">
           {/* Direct Square Instant Booking Banner */}
           <div className="bg-blue-50/70 border border-blue-200/80 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="space-y-0.5">
@@ -177,7 +177,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-3.5">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 gap-3.5">
                 <div>
                   <Label
@@ -358,7 +358,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <div className="pt-2">
                 <Button
                   type="submit"
-                  className="w-full h-11 bg-[#003c7a] hover:bg-[#002f60] text-white font-medium text-xs sm:text-sm rounded-full shadow-sm"
+                  className="w-full h-11 bg-[#003c7a] hover:bg-[#002f60] text-white font-medium text-xs sm:text-sm rounded-full shadow-sm cursor-pointer"
                 >
                   <CalendarCheck className="w-4 h-4 mr-2 text-sky-300" weight="bold" />
                   Submit Booking Request

@@ -175,8 +175,8 @@ export const Reviews: React.FC = () => {
 
       {/* Leave a Review Modal Dialog */}
       <Dialog open={reviewModalOpen} onOpenChange={setReviewModalOpen}>
-        <DialogContent className="sm:max-w-[480px] p-6 text-left rounded-2xl">
-          <DialogHeader>
+        <DialogContent className="sm:max-w-[480px] p-6 text-left rounded-2xl max-h-[90dvh] overflow-y-auto overscroll-contain">
+          <DialogHeader className="pr-8">
             <DialogTitle className="text-xl font-bold text-[#003c7a]">
               Share Your Experience
             </DialogTitle>

@@ -198,8 +198,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         open={legalModal !== null}
         onOpenChange={(open) => !open && setLegalModal(null)}
       >
-        <DialogContent className="sm:max-w-[500px] text-left p-6 rounded-2xl">
-          <DialogHeader>
+        <DialogContent className="sm:max-w-[500px] text-left p-6 rounded-2xl max-h-[90dvh] overflow-y-auto overscroll-contain">
+          <DialogHeader className="pr-8">
             <DialogTitle className="text-xl font-bold text-[#003c7a]">
               {legalModal === "privacy"
                 ? "Privacy Policy"
